@@ -39,81 +39,56 @@
     </nav>
 
 
-    <h2> </h2>
+    <h2>Edit Product</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
           <div class="col bg-light p-3 border">
             <img src="pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+            <div class="mb-3">
+              <input type="file" class="form-control" aria-label="file example" required>
+              <div class="invalid-feedback">Example invalid form file feedback</div>
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary" class="img-fluid rounded mx-auto d-block" 8type="button">Upload New Map</button>
+            </div>
           </div>
         </div>
         <div class="col">
           <div class="col bg-light p-3 border">
-            <h2>Computer 1 2.1</h2>
-            <h4>Category</h4>
-            <p>This is a very good computer with some funcionalities.</p>
-            <h3>399.99€</h3>
-            <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-primary" type="button">Add to Cart</button>
-              <button class="btn btn-primary" type="button">Add to Wishlist</button>
+            <h2>Name</h2>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Computer 1 2.1" aria-label="Computer 1 2.1" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Name</button>
             </div>
           </div>
-          <h2> </h2>
           <div class="col bg-light p-3 border">
-            <h2>Reviews</h2>
-            <div class="card mb-3" style="max-width: 750px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="user1.jpg" class="img-fluid rounded float-start" alt="..." width = "150" height = "150">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h3 class="card-title">User 1</h3>
-                    <h4 class="card-text">5/5 Stars</h4>
-                    <p class="card-text">I really liked the Computer! Very good!</p>
-                  </div>
-                </div>
-              </div>
+            <h2>Category</h2>
+            <div class="form-floating">
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <option selected>Computer</option>
+                <option value="1">CD</option>
+                <option value="2">Phone</option>
+                <option value="3">Headphones</option>
+              </select>
+              <label for="floatingSelect">Category</label>
+            </div>
+          </div>
+          <div class="col bg-light p-3 border">
+            <h2>Description</h2>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="This is a very good computer with some funcionalities." aria-label="This is a very good computer with some funcionalities." aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Description</button>
+            </div>
+          </div>
+          <div class="col bg-light p-3 border">
+            <h2>Price</h2>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="399.99€" aria-label="399.99€" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Price</button>
             </div>
           </div>
         </div>
     </div>
-    <h2> </h2>
-
-    <div class="col bg-light p-3 border">
-      <h2>Q&A</h2>
-      <h3> </h3>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="user1.jpg" class="img-fluid rounded float-start" alt="..." width = "100" height = "100">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h3 class="card-title">User 1</h3>
-              <p class="card-text">Is this a Good Computer?</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h3> </h3>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="admin.jpg" alt="..." class="img-fluid rounded float-start" width = "100" height = "100">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h3 class="card-title">Admin</h3>
-              <p class="card-text">Of course! It's one of the best computers!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <h2> </h2>
-    <h2> </h2>
     <h2> </h2>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
