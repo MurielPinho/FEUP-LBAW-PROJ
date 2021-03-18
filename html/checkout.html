@@ -22,7 +22,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="managestore.html">Settings</a>
+              <a class="nav-link" href="backoffice/index.html">Settings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loginreg.html">Login | Register</a>
@@ -31,14 +31,38 @@
               <a class="nav-link" href="viewcart.html">Shopping Cart</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form class="d-flex" action="productsearch.html">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success"  type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
 
+  <div class="steps-form">
+      <div class="steps-row setup-panel">
+        <div class="steps-step">
+          <a type="button" class="btn btn-success btn-circle">1</a>
+          <p>View Cart</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-warning btn-circle" disabled="disabled">2</a>
+          <p>Checkout</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">3</a>
+          <p>Pay</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">4</a>
+          <p>In Delivery</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">5</a>
+          <p>Review</p>
+        </div>
+      </div>
+    </div>
 
     <h2>Payment and Transport</h2>
     <div class="col bg-light p-3 border">
@@ -77,7 +101,7 @@
     </div>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-primary me-md-2 btn-lg mt-2" type="button">Finish</button>
+      <button onclick="location.href='index.php'" class="btn btn-primary me-md-2 btn-lg mt-2" type="button">Finish</button>
     </div>
 
 
