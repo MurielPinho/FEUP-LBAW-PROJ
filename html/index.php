@@ -5,13 +5,14 @@
     <title>Digital Prime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <style> a {text-decoration:none}</style>
 
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <img src="iconpc.png" alt="..." width = "50" height = "50">
-        <a class="navbar-brand" href="index.php">Digital Prime</a>
+        <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
+        <a class="navbar-brand" href="index.php" >Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,7 +22,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="managestore.html">Settings</a>
+              <a class="nav-link" href="./backoffice">Settings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loginreg.html">Login | Register</a>
@@ -33,7 +34,7 @@
           </ul>
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <a class="btn btn-outline-success" href="./productsearch.html">Search</a>
           </form>
         </div>
       </div>
@@ -46,13 +47,13 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="pcimage3.jpg" class="d-block w-100" alt="..." height = "500px">
+          <img src="./assets/pcimage3.jpg" class="d-block w-100" alt="..." height = "500px">
         </div>
         <div class="carousel-item">
-          <img src="pcimage.jpg" class="d-block w-100" alt="..." height = "500px">
+          <img src="./assets/pcimage.jpg" class="d-block w-100" alt="..." height = "500px">
         </div>
         <div class="carousel-item">
-          <img src="pcimage2.jpeg" class="d-block w-100" alt="..." height = "500px">
+          <img src="./assets/pcimage2.jpeg" class="d-block w-100" alt="..." height = "500px">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
@@ -70,7 +71,7 @@
 
 
 
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs mx-auto">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#">Latest Promotions</a>
       </li>
@@ -85,13 +86,11 @@
 
 
 
-
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-3 mt-2 w-90 mx-auto">
       <div class="col">
         <a href="viewproduct.html">
           <div class="card h-100">
-            <img src="pc1.jpg" class="card-img-top" alt="...">
+            <img src="./assets/pc1.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
               <h5 class="card-title">Computer 1</h5>
               <p class="card-text">This is a very good computer with lots of funcionalities.</p>
@@ -104,8 +103,8 @@
       </div>
       <div class="col">
         <a href="viewproduct.html">
-          <div class="card h-100">
-            <img src="pc2.jpg" class="card-img-top" alt="...">
+          <div class="card h-90">
+            <img src="./assets/pc2.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
               <h5 class="card-title">Computer 2</h5>
               <p class="card-text">This is a very good computer with even more funcionalities.</p>
@@ -119,7 +118,7 @@
       <div class="col">
         <a href="viewproduct.html">
           <div class="card h-100">
-            <img src="pc1.jpg" class="card-img-top" alt="...">
+            <img src="./assets/pc1.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
               <h5 class="card-title">Computer 1 2.1</h5>
               <p class="card-text">This is a very good computer with some funcionalities.</p>
@@ -132,7 +131,7 @@
       </div>
     </div>
 
-    <nav aria-label="Page navigation example">
+    <nav aria-label="Page navigation example" class="mt-3 mr-0">
       <ul class="pagination">
         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
         <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -143,14 +142,11 @@
     </nav>
 
 
-    <?php
-    echo '<p>Content from PHP.</p>';
-  ?>
-  <nav class="navbar fixed-bottom navbar-light bg-light">
+  <footer class="navbar navbar-light bg-light \">
     <div class="container-fluid">
-      <a class="navbar-brand" href="contactsfaqs.html">Contacts | FAQ's</a>
+      <a class="navbar-brand mx-auto" href="contactsfaqs.html">Contacts | FAQ's</a>
     </div>
-  </nav>
+  </footer>
 
 
 
