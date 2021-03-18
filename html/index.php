@@ -8,29 +8,31 @@
     <link href="./styles/style.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
+       <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
         <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
-        <a class="navbar-brand" href="index.php" >Digital Prime</a>
+        <a class="navbar-brand" href="index.php">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse h-50" id="navbarScroll">
+        <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./backoffice">Settings</a>
+              <a class="nav-link" href="backoffice/index.html">Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="loginreg.html">Login | Register</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="viewcart.html">Shopping Cart</a>
             </li>
-                  
           </ul>
-          <form class="d-flex">
+          <form class="d-flex" action="productsearch.html">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <a class="btn btn-outline-success" href="./productsearch.html">Search</a>
+            <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
       </div>
@@ -88,11 +90,11 @@
           <div class="card h-100">
             <img src="./assets/pc1.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Computer 1</h5>
+              <h5 class="card-title">Mega Computer v2</h5>
               <p class="card-text">This is a very good computer with lots of funcionalities.</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">399.99€</small>
+              <small class="text-muted">999.99€</small>
             </div>
           </div>
         </a>
@@ -102,11 +104,11 @@
           <div class="card h-90">
             <img src="./assets/pc2.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Computer 2</h5>
+              <h5 class="card-title">Super Computer</h5>
               <p class="card-text">This is a very good computer with even more funcionalities.</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">599.99€</small>
+              <small class="text-muted">399.99€</small>
             </div>
           </div>
         </a>
@@ -114,13 +116,13 @@
       <div class="col">
         <a href="viewproduct.html">
           <div class="card h-100">
-            <img src="./assets/pc1.jpg" class="card-img-top" alt="..." height="300">
+            <img src="./assets/pc3.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Computer 1 2.1</h5>
+              <h5 class="card-title">Medium Computer</h5>
               <p class="card-text">This is a very good computer with some funcionalities.</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">399.99€</small>
+              <small class="text-muted">299.99€</small>
             </div>
           </div>
         </a>
@@ -138,7 +140,7 @@
     </nav>
 
 
-  <footer class="navbar navbar-light bg-light \">
+  <footer class="navbar navbar-light bg-light \ fixed-bottom">
     <div class="container-fluid">
       <a class="navbar-brand mx-auto" href="contactsfaqs.html">Contacts | FAQ's</a>
     </div>
