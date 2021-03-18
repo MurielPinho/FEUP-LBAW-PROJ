@@ -21,7 +21,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="managestore.html">Settings</a>
+              <a class="nav-link" href="backoffice/index.html">Settings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loginreg.html">Login | Register</a>
@@ -30,7 +30,7 @@
               <a class="nav-link" href="viewcart.html">Shopping Cart</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form class="d-flex" action="productsearch.html">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -44,7 +44,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <a class="nav-link" href="#">Login</a>
-            <form class="px-4 py-3">
+            <form class="px-4 py-3" action="index.php">
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
                   <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
@@ -57,25 +57,28 @@
                 <button type="submit" class="btn btn-primary">Sign In</button>
               </form>
         </div>
-        <div class="col">
+        <div class="col" >
             <a class="nav-link" href="#">Register</a>
-            <form class="px-4 py-3">
+            <form class="px-4 py-3" action="index.php">
                 <div class="mb-3">
-                  <label for="exampleDropdownFormUser1" class="form-label">Email</label>
+                  <label for="exampleDropdownFormUser1" class="form-label">Email*</label>
                   <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleDropdownFormEmail1" class="form-label">User</label>
+                    <label for="exampleDropdownFormEmail1" class="form-label">User*</label>
                     <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
                   </div>
                 <div class="mb-3">
-                  <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                  <label for="exampleDropdownFormPassword1" class="form-label">Password*</label>
                   <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleDropdownFormPassword1" class="form-label">Confirm Password</label>
+                    <label for="exampleDropdownFormPassword1" class="form-label">Confirm Password*</label>
                     <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                
+                    <br>* Required field
                   </div>
+                
                 <button type="submit" class="btn btn-primary">Sign Up</button>
               </form>
         </div>

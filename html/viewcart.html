@@ -5,7 +5,8 @@
     <title>Digital Prime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-
+    <link href="./styles/style.css" rel="stylesheet">
+      
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
@@ -21,7 +22,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="managestore.html">Settings</a>
+              <a class="nav-link" href="backoffice/index.html">Settings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loginreg.html">Login | Register</a>
@@ -30,13 +31,38 @@
               <a class="nav-link" href="viewcart.html">Shopping Cart</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <form class="d-flex" action="productsearch.html">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
         </div>
       </div>
     </nav>
+      
+  <div class="steps-form">
+      <div class="steps-row setup-panel">
+        <div class="steps-step">
+          <a type="button" class="btn btn-warning btn-circle">1</a>
+          <p>View Cart</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">2</a>
+          <p>Checkout</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">3</a>
+          <p>Pay</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">4</a>
+          <p>In Delivery</p>
+        </div>
+        <div class="steps-step">
+          <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">5</a>
+          <p>Review</p>
+          </div>
+        </div>
+    </div>
 
 
     <h2>My Cart</h2>
