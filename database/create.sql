@@ -1,18 +1,20 @@
+DROP TABLE IF EXISTS answer;
+DROP TABLE IF EXISTS question;
+DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS orderTotal;
+DROP TABLE IF EXISTS orderedProduct;
 DROP TABLE IF EXISTS buyer;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS address;
 DROP TABLE IF EXISTS paymentMethod;
-DROP TABLE IF EXISTS orderTotal;
-DROP TABLE IF EXISTS orderedProduct;
-DROP TABLE IF EXISTS review;
-DROP TABLE IF EXISTS question;
-DROP TABLE IF EXISTS answer;
 DROP TABLE IF EXISTS admin;
+
+DROP TYPE IF EXISTS rate;
 
 -- Types
  
-CREATE TYPE media AS ENUM ('CD', 'DVD', 'VHS', 'Slides', 'Photos', 'MP3');
- 
+CREATE TYPE rate AS ENUM ('poor','bad', 'neutral', 'good', 'excellent');
+
 -- Tables
 
 CREATE TABLE buyer (
@@ -59,7 +61,7 @@ CREATE TABLE orderedProduct (
     id_buyer INTEGER NOT NULL REFERENCES buyer (id) ON UPDATE CASCADE,
     id_product INTEGER NOT NULL REFERENCES product (id) ON UPDATE CASCADE,
     PRIMARY KEY (id_buyer, id_product),
-    quantity INTEGER NOT NULL
+    quantity INTEGER NOT NULL CONSTRAINT order_ck CHECK (quantity > 0)
 );
  
 CREATE TABLE review (
@@ -68,7 +70,7 @@ CREATE TABLE review (
     PRIMARY KEY (id_buyer, id_product),
     reviewText text NOT NULL,
     date TIMESTAMP WITH TIME zone NOT NULL,
-    rating INTEGER NOT NULL CONSTRAINT rating_ck CHECK (((rating > 0) OR (rating <= 5)))
+    rating rate NOT NULL  
 
 );
  
@@ -81,9 +83,8 @@ CREATE TABLE question (
 );
  
 
- 
 CREATE TABLE admin (
-	id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name text NOT NULL,
     email text NOT NULL CONSTRAINT admin_email_uk UNIQUE,
     password text NOT NULL,
