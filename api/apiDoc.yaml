@@ -1,0 +1,273 @@
+openapi: 3.0.0
+info:
+  version: 1.0-oas3
+  title: 'LBAW 2173 DigitalPrime'
+  description: 'Web Resources Specification (A7) for DigitalPrime'
+
+servers:
+  - url: 'http://lbaw2173-piu.lbaw-prod.fe.up.pt/api'
+    description: Production Server
+    
+externalDocs:
+  description: Find more info here.
+  url: 'https://git.fe.up.pt/lbaw/lbaw2021/lbaw2173/-/wikis/'
+  
+tags: 
+  - name: 'M01: Authentication and Edition of Buyer Information'
+  - name: 'M02: Products'
+  - name: 'M03: Shopping Cart and Wishlist'
+  - name: 'M04: Reviews and Q&A'
+  - name: 'M05: Cupons'
+  - name: 'M06: Pages'
+
+paths:
+  /login:
+    get:
+      operationId: R101
+      summary: 'R101: Login Form'
+      description: 'Provide login form. Access: PUB'
+      tags: 
+        - 'M01: Authentication and Edition of Buyer Information'
+      responses:
+        '200':
+          description: 'Ok. Show [UI09](http://lbaw2173-piu.lbaw-prod.fe.up.pt/loginreg.html)'
+      
+    post:
+      operationId: R102
+      summary: 'R102: Login Action'
+      description: 'Processes the login form submission. Access: PUB'
+      tags:
+          - 'M01: Authentication and Edition of Buyer Information'
+          
+      requestBody:
+            required: true
+            content:
+              application/x-www-form-urlencoded:
+                schema:
+                  type: object
+                  properties:
+                    username:          
+                      type: string
+                    password:    
+                      type: string
+                  required:
+                    - username
+                    - password
+    
+      responses:
+            '302':
+              description: 'Redirect after processing the login credentials.'
+              headers:
+                Location:
+                  schema:
+                    type: string
+                  examples:
+                    302Success:
+                      description: 'Successful authentication.'
+                      value: '/mainpage'
+                    302Error:
+                      description: 'Failed authentication. Redirect to login form.'
+                      value: '/login'
+
+
+  /logout:
+    post:
+      operationId: R103
+      summary: 'R103: Logout Action'
+      description: 'Logout the current authenticated used. Access: BYR, RWR, ADM, SADM'
+      tags:
+        - 'M01: Authentication and Individual Profile'
+      responses:
+        '302':
+          description: 'Redirect after processing logout.'
+          headers:
+            Location:
+              schema:
+                type: string
+              examples:
+                302Success:
+                  description: 'Successful logout. Redirect to mainpage.'
+                  value: '/mainpage'
+
+  /register:
+    get:
+      operationId: R104
+      summary: 'R104: Register Form'
+      description: 'Provide new user registration form. Access: PUB'
+      tags:
+        - 'M01: Authentication and Edition of Buyer Information'
+      responses:
+        '200':
+          description: 'Ok. Show [UI09](http://lbaw2173-piu.lbaw-prod.fe.up.pt/loginreg.html)'
+
+    post:
+      operationId: R105
+      summary: 'R105: Register Action'
+      description: 'Processes the new user registration form submission. Access: PUB'
+      tags:
+        - 'M01: Authentication and Edition of Buyer Information'
+
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                user:
+                  type: string
+                password:
+                  type: string
+                confirmPassword:
+                  type: string
+
+              required:
+                - email
+                - user
+                - password
+                - confirmPassword
+
+      responses:
+        '302':
+          description: 'Redirect after processing the new user information.'
+          headers:
+            Location:
+              schema:
+                type: string
+              examples:
+                302Success:
+                  description: 'Successful registration.'
+                  value: '/mainpage'
+                302Error:
+                  description: 'Failed registration. Redirect to registration form.'
+                  value: '/login'
+
+           
+  /api/products:
+      get:
+        operationId: R201
+        summary: 'R202: Search Product API'
+        description: 'Searches for products and returns the results as JSON. Access: PUB.'
+  
+        tags: 
+          - 'M02: Products'
+  
+        parameters:
+          - in: query
+            name: query
+            description: String to use for full-text search
+            schema:
+              type: string
+            required: false
+          - in: query
+            name: item
+            description: Category of the product
+            schema:
+              type: string
+            required: false
+          - in: query
+            name: promotion
+            description: Boolean if has promotion associated
+            schema:
+              type: boolean
+            required: false
+  
+        responses:
+          '200':
+            description: Success
+            content:
+              application/json:
+                schema:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      price:
+                        type: string
+                      description:
+                        type: string
+                      quantity:
+                        type: string
+                      discount:
+                        type: string
+                  example:
+                    - id: 1
+                      name: Macbook Pro
+                      price: 1500
+                      description: The state of the art tecnology for apple fans!
+                      quantity: 20
+                      discount: no
+                    - id: 15
+                      name: IPhone X
+                      price: 599.99
+                      description: Comemorating ten years of the first IPhone!!!
+                      quantity: 5
+                      discount: 100
+
+  /api/cart/{buyer_id}:
+    get:
+      operationId: R301
+      summary: 'R301: View buyers cart'
+      description: 'Show the individual buyer cart. Access: BYR'
+      tags:
+        - 'M03: Shopping Cart and Wishlist'
+  
+      parameters:
+        - in: path
+          name: buyer_id
+          schema:
+            type: integer
+          required: true
+  
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    name:
+                      type: string
+                    price:
+                      type: string
+                    description:
+                      type: string
+                    quantity:
+                      type: string
+                    discount:
+                      type: string
+                example:
+                  - id: 1
+                    name: Macbook Pro
+                    price: 1500
+                    description: The state of the art tecnology for apple fans!
+                    quantity: 20
+                    discount: no
+                  - id: 15
+                    name: IPhone X
+                    price: 599.99
+                    description: Comemorating ten years of the first IPhone!!!
+                    quantity: 5
+                    discount: 100
+
+  /mainpage:
+      get:
+        operationId: R601
+        summary: 'R601: Main page'
+        description: 'Provide main site page. Access: PUB'
+        tags: 
+          - 'M06: Pages'
+        responses:
+          '200':
+            description: 'Ok. Show [UI01](http://lbaw2173-piu.lbaw-prod.fe.up.pt)'
