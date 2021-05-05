@@ -8,8 +8,8 @@ use App\Http\Controllers\Controller;
 class MainPageController extends Controller
 {
 
-    public function index() {
-        return redirect('index.php');
+    public function home() {
+        return view('index');
     }
 
 }
