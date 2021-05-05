@@ -7,7 +7,12 @@
 .env.backup
 .phpunit.result.cache
 docker-compose.override.yml
+/.idea
+/.vagrant
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.DS_Store
+.gitignore
+.DS_Store
