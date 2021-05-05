@@ -11,7 +11,7 @@
 |
 */
 // Home
-Route::get('/', 'Auth\LoginController@home');
+Route::get('/', 'MainPageController.php@index');
 
 // Cards
 Route::get('cards', 'CardController@list');
