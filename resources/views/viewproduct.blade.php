@@ -21,16 +21,16 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="backoffice/index.html">Settings</a>
+              <a class="nav-link" href="backoffice/index">Settings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="loginreg.html">Login | Register</a>
+              <a class="nav-link" href="loginreg">Login | Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="viewcart.html">Shopping Cart</a>
+              <a class="nav-link" href="viewcart">Shopping Cart</a>
             </li>
           </ul>
-          <form class="d-flex" action="productsearch.html">
+          <form class="d-flex" action="productsearch">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -118,7 +118,7 @@
 
     <footer class="navbar navbar-light bg-light \ fixed-bottom">
       <div class="container-fluid">
-        <a class="navbar-brand mx-auto" href="contactsfaqs.html">Contacts | FAQ's</a>
+        <a class="navbar-brand mx-auto" href="contactsfaqs">Contacts | FAQ's</a>
       </div>
     </footer>
 

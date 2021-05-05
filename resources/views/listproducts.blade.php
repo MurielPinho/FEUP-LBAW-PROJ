@@ -21,16 +21,16 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="backoffice/index.html">Settings</a>
+              <a class="nav-link" href="backoffice/index">Settings</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="loginreg.html">Login | Register</a>
+              <a class="nav-link" href="loginreg">Login | Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="viewcart.html">Shopping Cart</a>
+              <a class="nav-link" href="viewcart">Shopping Cart</a>
             </li>
           </ul>
-          <form class="d-flex" action="productsearch.html">
+          <form class="d-flex" action="productsearch">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form>
@@ -85,7 +85,7 @@
                     <td><img src="./assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>20</td>
-                    <td> <button onclick="location.href='viewproduct-edit.html'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
+                    <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
                 
                 <tr>
@@ -93,7 +93,7 @@
                     <td><img src="./assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>50</td>
-                    <td> <button onclick="location.href='viewproduct-edit.html'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
+                    <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
                 
                 <tr>
@@ -101,7 +101,7 @@
                     <td><img src="./assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>10</td>
-                    <td> <button onclick="location.href='viewproduct-edit.html'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
+                    <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
                 
                 <tr>
@@ -109,13 +109,13 @@
                     <td><img src="./assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>30</td>
-                    <td> <button onclick="location.href='viewproduct-edit.html'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
+                    <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
             
             </tbody>
         </table>
     
-        <button onclick="location.href='viewproduct-create.html'" class="btn mb-5 btn-primary">New Product</button>  
+        <button onclick="location.href='viewproduct-create'" class="btn mb-5 btn-primary">New Product</button>  
       
       </div>
     
@@ -123,7 +123,7 @@
       
       <footer class="navbar navbar-light bg-light \ fixed-bottom">
         <div class="container-fluid">
-          <a class="navbar-brand mx-auto" href="contactsfaqs.html">Contacts | FAQ's</a>
+          <a class="navbar-brand mx-auto" href="contactsfaqs">Contacts | FAQ's</a>
         </div>
       </footer>
 

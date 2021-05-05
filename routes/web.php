@@ -12,13 +12,13 @@
 */
 // Home
 Route::get('/', 'MainPageController@home');
-Route::get('/loginreg.html', 'MainPageController@login');
-Route::get('/viewcart.html', 'MainPageController@viewcart');
-Route::get('/productsearch.html', 'MainPageController@productsearch');
-Route::get('/contactsfaqs.html', 'MainPageController@contactsfaqs');
-Route::get('/viewproduct.html', 'MainPageController@viewproduct');
+Route::get('/loginreg', 'MainPageController@login');
+Route::get('/viewcart', 'MainPageController@viewcart');
+Route::get('/productsearch', 'MainPageController@productsearch');
+Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
+Route::get('/viewproduct', 'MainPageController@viewproduct');
 Route::get('/backoffice/', 'BackOfficeController@home');
-Route::get('/backoffice/index.html', 'BackOfficeController@home');
+Route::get('/backoffice/index', 'BackOfficeController@home');
 
 // Cards
 Route::get('cards', 'CardController@list');
