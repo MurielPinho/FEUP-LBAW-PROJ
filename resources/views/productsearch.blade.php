@@ -122,72 +122,15 @@
                     />
                     <label class="form-check-label" for="flexRadioDefault1">Older</50> </label>
                   </div>
-      
+
                 </div>
 
-               
-        
+
+
         </div>
         <div class="col-sm-9 mt-4">
-            <div class="card mb-3" style="max-width: 1000px;">
-                <div class="row g-0">
-                  <div class="col-md-5">
-                    <img src="./assets/pc2.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
-                  </div>
-                  <div class="col-md-7">
-                    <div class="card-body">
-                      <h5 class="card-title">Super Computer</h5>
-                      <h6 class="card-title">PCs</h6>
-                      <h6 class="card-text">399.99$</h6>
-                      <p class="card-text">
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                          <button class="btn btn-primary" type="button">Add to Cart</button>
-                        </div>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-3" style="max-width: 1000px;">
-                <div class="row g-0">
-                  <div class="col-md-5">
-                    <img src="./assets/pc3.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
-                  </div>
-                  <div class="col-md-7">
-                    <div class="card-body">
-                      <h5 class="card-title">Medium Computer</h5>
-                      <h6 class="card-title">PCs</h6>
-                      <h6 class="card-text">299.99$</h6>
-                      <p class="card-text">
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                          <button class="btn btn-primary" type="button">Add to Cart</button>
-                        </div>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-3" style="max-width: 1000px;">
-                <div class="row g-0">
-                  <div class="col-md-5">
-                    <img src="./assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
-                  </div>
-                  <div class="col-md-7">
-                    <div class="card-body">
-                      <h5 class="card-title">Mega Computer v2</h5>
-                      <h6 class="card-title">PCs</h6>
-                      <h6 class="card-text">999.99$</h6>
-                      <p class="card-text">
-                        <div class="d-grid gap-2 col-6 mx-auto">
-                          <button class="btn btn-primary" type="button">Add to Cart</button>
-                        </div>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-      </div>
+            @each('partials.product_card',$products ,'product' )
+         </div>
 
       <footer class="navbar navbar-light bg-light \ fixed-bottom">
         <div class="container-fluid">

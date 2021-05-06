@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Product extends Model
+{
+  // Don't add create and update timestamps in database.
+  public $timestamps  = false;
+  protected $table = 'product';
+
+  /**
+   * The user this card belongs to
+   */
+//   public function user() {
+//     return $this->belongsTo('App\Models\User');
+//   }
+
+  /**
+   * Items inside this card
+   */
+  public function category() {
+    return $this->belongsTo('App\Models\Category');
+  }
+}

@@ -14,22 +14,23 @@ DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS buyer;
 DROP TABLE IF EXISTS category;
 
- 
+
 -- Tables
 
 CREATE TABLE category(
 	id SERIAL PRIMARY KEY,
-	name TEXT UNIQUE NOT NULL	
-	
+	name TEXT UNIQUE NOT NULL
+
 );
 
-CREATE TABLE buyer (
+CREATE TABLE buyers (
     id SERIAL PRIMARY KEY,
     name text NOT NULL,
     email text NOT NULL CONSTRAINT user_email_uk UNIQUE,
-    phoneNumber text NOT NULL
+    phoneNumber text NOT NULL,
+    password text NOT NULL
 );
- 
+
 CREATE TABLE product (
     id SERIAL PRIMARY KEY,
     name text NOT NULL,
@@ -38,7 +39,7 @@ CREATE TABLE product (
     description text NOT NULL,
     quantity INTEGER NOT NULL
 );
- 
+
 CREATE TABLE address (
     id SERIAL PRIMARY KEY,
     city text NOT NULL,
@@ -46,14 +47,14 @@ CREATE TABLE address (
     door text,
     address text NOT NULL
 );
- 
+
 CREATE TABLE paymentMethod (
     id SERIAL PRIMARY KEY,
     cardNumber text NOT NULL,
     securityCode text NOT NULL,
     expirationDate TIMESTAMP WITH TIME zone NOT NULL
 );
- 
+
 CREATE TABLE orderTotal (
     id SERIAL PRIMARY KEY,
     date TIMESTAMP WITH TIME zone NOT NULL,
@@ -62,14 +63,14 @@ CREATE TABLE orderTotal (
     id_buyer INTEGER NOT NULL REFERENCES buyer (id) ON UPDATE CASCADE,
     id_product INTEGER NOT NULL REFERENCES product (id) ON UPDATE CASCADE
 );
- 
+
 CREATE TABLE orderedProduct (
     id SERIAL PRIMARY KEY,
     id_buyer INTEGER NOT NULL REFERENCES buyer (id) ON UPDATE CASCADE,
     id_product INTEGER NOT NULL REFERENCES product (id) ON UPDATE CASCADE,
     quantity INTEGER NOT NULL
 );
- 
+
 CREATE TABLE review (
     id_buyer INTEGER NOT NULL REFERENCES buyer (id) ON UPDATE CASCADE,
     id_product INTEGER NOT NULL REFERENCES product (id) ON UPDATE CASCADE,
@@ -79,7 +80,7 @@ CREATE TABLE review (
     rating INTEGER NOT NULL CONSTRAINT rating_ck CHECK (((rating > 0) OR (rating <= 5)))
 
 );
- 
+
 CREATE TABLE question (
     id SERIAL PRIMARY KEY,
     questionText text NOT NULL,
@@ -87,9 +88,9 @@ CREATE TABLE question (
     id_buyer INTEGER NOT NULL REFERENCES buyer (id) ON UPDATE CASCADE,
     id_product INTEGER NOT NULL REFERENCES product (id) ON UPDATE CASCADE
 );
- 
 
- 
+
+
 CREATE TABLE admin (
 	id SERIAL PRIMARY KEY,
     name text NOT NULL,
@@ -117,16 +118,16 @@ CREATE TABLE cupon (
 CREATE TABLE cartProduct(
 	idBuyer INTEGER NOT NULL REFERENCES buyer (id),
 	idProduct INTEGER NOT NULL REFERENCES product (id),
-	PRIMARY KEY (idBuyer,idProduct),	
+	PRIMARY KEY (idBuyer,idProduct),
 	quantity INTEGER NOT NULL CONSTRAINT quantity_ck CHECK (quantity > 0)
-	
+
 );
 
 CREATE TABLE whishlist(
 	idBuyer INTEGER NOT NULL REFERENCES buyer (id),
 	idProduct INTEGER NOT NULL REFERENCES product (id),
-	PRIMARY KEY (idBuyer,idProduct)	
-	
+	PRIMARY KEY (idBuyer,idProduct)
+
 );
 
 
@@ -135,5 +136,5 @@ CREATE TABLE promotion(
 	id SERIAL PRIMARY KEY,
 	discount INTEGER NOT NULL CONSTRAINT discount2_ck CHECK (discount > 0),
 	validUNTIL TIMESTAMP NOT NULL DEFAULT NOW()
-	
+
 );

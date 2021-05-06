@@ -19,6 +19,17 @@ Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
 
 
+//Buyers
+Route::get('buyers/{id}', 'BuyerController@show');
+Route::get('buyers', 'BuyerController@list');
+Route::post('register', 'BuyerController@create')->name('register');
+Route::post('login', 'BuyerController@check_login')->name('login');
+
+//Products
+Route::get('products', 'ProductController@list');
+Route::get('products/{id}', 'ProductController@show');
+
+
 // Cards
 Route::get('cards', 'CardController@list');
 Route::get('cards/{id}', 'CardController@show');

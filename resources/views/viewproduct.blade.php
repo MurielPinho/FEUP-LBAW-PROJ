@@ -10,7 +10,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
+        <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
         <a class="navbar-brand" href="index.php">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -43,15 +43,15 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
           <div class="col bg-light p-3 border">
-            <img src="./assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+            <img src="../assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
           </div>
         </div>
         <div class="col">
           <div class="col bg-light p-3 border">
-            <h2>Computer 1 2.1</h2>
+            <h2>{{$product->name}}</h2>
             <h4>Category</h4>
-            <p>This is a very good computer with some funcionalities.</p>
-            <h3>399.99€</h3>
+            <p>{{$product->description}}</p>
+            <h3>{{$product->price}}$</h3>
             <div class="d-grid gap-2 d-md-block">
               <button class="btn btn-primary" type="button">Add to Cart</button>
               <button class="btn btn-primary" type="button">Add to Wishlist</button>
@@ -63,7 +63,7 @@
             <div class="card mb-3" style="max-width: 750px;">
               <div class="row g-0">
                 <div class="col-md-2">
-                  <img src="./assets/user1.jpg" class="img-fluid rounded float-start h-100" alt="..." width = "150">
+                  <img src="../assets/user1.jpg" class="img-fluid rounded float-start h-100" alt="..." width = "150">
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
@@ -85,7 +85,7 @@
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-1">
-            <img src="./assets/user1.jpg" class="img-fluid rounded float-start" alt="..." width = "100" height = "100">
+            <img src="../assets/user1.jpg" class="img-fluid rounded float-start" alt="..." width = "100" height = "100">
           </div>
           <div class="col-md-11">
             <div class="card-body">
@@ -99,7 +99,7 @@
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-1">
-            <img src="./assets/admin.jpg" alt="..." class="img-fluid rounded float-start" width = "100" height = "100">
+            <img src="../assets/admin.jpg" alt="..." class="img-fluid rounded float-start" width = "100" height = "100">
           </div>
           <div class="col-md-11">
             <div class="card-body">
