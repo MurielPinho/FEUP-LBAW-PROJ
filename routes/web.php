@@ -32,7 +32,16 @@ Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
 
 
+//Backoffice
+Route::get('/backoffice', 'BackOfficeController@home');
+Route::get('/backoffice/index.php', 'BackOfficeController@home');
+Route::get('/backoffice/users', 'BackOfficeController@users');
+Route::get('/backoffice/settings', 'BackOfficeController@settings');
+Route::get('/backoffice/products', 'BackOfficeController@products');
+Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
+
 // Cards
+/*// Authentication
 Route::get('cards', 'CardController@list');
 Route::get('cards/{id}', 'CardController@show');
 
@@ -43,19 +52,10 @@ Route::put('api/cards/{card_id}/', 'ItemController@create');
 Route::post('api/item/{id}', 'ItemController@update');
 Route::delete('api/item/{id}', 'ItemController@delete');
 
-// Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
-
-
-//Backoffice
-Route::get('/backoffice', 'BackOfficeController@home');
-Route::get('/backoffice/index.php', 'BackOfficeController@home');
-Route::get('/backoffice/users', 'BackOfficeController@users');
-Route::get('/backoffice/settings', 'BackOfficeController@settings');
-Route::get('/backoffice/products', 'BackOfficeController@products');
-Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
+*/
 

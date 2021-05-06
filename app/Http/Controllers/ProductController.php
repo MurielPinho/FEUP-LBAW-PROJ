@@ -36,17 +36,7 @@ class ProductController extends Controller
 
 	public function create(Request $request)
 	{
-        $buyer = new Buyer();
-        $buyer->name = $request->input('name');
-        $buyer->email = $request->input('email');
-        $buyer->phonenumber = $request->input('phonenumber');
-        $buyer->password = Hash::make($request->input('password')) ;
-
-        $buyer->save();
-
-        return $buyer;
-
-
+        
 	}
 
 

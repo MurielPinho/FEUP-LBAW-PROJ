@@ -45,6 +45,7 @@
         <div class="col">
             <a class="nav-link" href="#">Login</a>
             <form class="px-4 py-3" method="POST" action="login">
+               {{ csrf_field() }}
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
                   <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
@@ -60,17 +61,22 @@
         <div class="col" >
             <a class="nav-link" href="#">Register</a>
             <form class="px-4 py-3" method="POST" action="register">
+              {{ csrf_field() }}
                 <div class="mb-3">
                   <label for="exampleDropdownFormUser1" class="form-label">Email*</label>
-                  <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+                  <input type="email" name="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
                 </div>
                 <div class="mb-3">
                     <label for="exampleDropdownFormEmail1" class="form-label">User*</label>
-                    <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
+                    <input name="name" type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
                   </div>
                 <div class="mb-3">
+                  <label for="exampleDropdownFormText" class="form-label">Phone number*</label>
+                  <input type="Phone" name="phonenumber" class="form-control" id="exampleDropdownFormText" placeholder="9999-9999">
+                </div>
+                <div class="mb-3">
                   <label for="exampleDropdownFormPassword1" class="form-label">Password*</label>
-                  <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
                 </div>
                 <div class="mb-3">
                     <label for="exampleDropdownFormPassword1" class="form-label">Confirm Password*</label>
