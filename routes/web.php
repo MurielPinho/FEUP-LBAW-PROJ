@@ -23,6 +23,7 @@ Route::get('/viewproduct', 'MainPageController@viewproduct');
 Route::get('buyers/{id}', 'BuyerController@show');
 Route::get('buyers', 'BuyerController@list');
 Route::post('register', 'BuyerController@create')->name('register');
+Route::get('register', 'MainPageController@login');
 Route::post('login', 'BuyerController@check_login')->name('login');
 
 //Products
