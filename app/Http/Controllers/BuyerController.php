@@ -16,7 +16,6 @@ class BuyerController extends Controller
        foreach ($buyers as $buyer){
             echo $buyer->email ;
        }
-
        return;
 
 	}
@@ -32,6 +31,7 @@ class BuyerController extends Controller
 
     public function check_login (Request $request){
 
+        return redirect("index");
     }
 
 
@@ -45,8 +45,9 @@ class BuyerController extends Controller
 
         $buyer->save();
 
-        return $buyer;
+        echo $request->input('name');
 
+        return $buyer;
 
 	}
 

@@ -21,7 +21,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="backoffice/index">Settings</a>
+              <a class="nav-link" href="backoffice">Settings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="loginreg">Login | Register</a>
@@ -44,7 +44,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <a class="nav-link" href="#">Login</a>
-            <form class="px-4 py-3" action="index.php">
+            <form class="px-4 py-3" method="POST" action="login">
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
                   <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
@@ -59,7 +59,7 @@
         </div>
         <div class="col" >
             <a class="nav-link" href="#">Register</a>
-            <form class="px-4 py-3" action="index.php">
+            <form class="px-4 py-3" method="POST" action="register">
                 <div class="mb-3">
                   <label for="exampleDropdownFormUser1" class="form-label">Email*</label>
                   <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">

@@ -31,7 +31,7 @@
               <img src="../assets/iconsettings.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="./backoffice/settings">Store Settings</a>
+                  <a class="nav-link" href="/backoffice/settings">Store Settings</a>
                 </h5>
               </div>
             </div>
@@ -41,7 +41,7 @@
               <img src="../assets/iconprofile.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="./backoffice/users">Manage Users</a>
+                  <a class="nav-link" href="/backoffice/users">Manage Users</a>
                 </h5>
               </div>
             </div>
@@ -55,7 +55,7 @@
               <img src="../assets/iconaddproduct.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="300">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="./backoffice/newproduct">New Product</a>
+                  <a class="nav-link" href="/backoffice/newproduct">New Product</a>
                 </h5>
               </div>
             </div>
@@ -65,7 +65,7 @@
               <img src="../assets/iconviewall.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="./backoffice/products">View All Products</a>
+                  <a class="nav-link" href="/backoffice/products">View All Products</a>
                 </h5>
               </div>
             </div>
@@ -75,7 +75,7 @@
 
     <footer class="navbar navbar-light bg-light \ fixed-bottom">
       <div class="container-fluid">
-        <a class="navbar-brand mx-auto" href="../contactsfaqs.html">Contacts | FAQ's</a>
+        <a class="navbar-brand mx-auto" href="../contactsfaqs">Contacts | FAQ's</a>
       </div>
     </footer>
 

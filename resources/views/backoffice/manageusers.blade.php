@@ -21,7 +21,7 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Settings</a>
+              <a class="nav-link" href="/backoffice">Settings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../loginreg.html">Login | Register</a>
