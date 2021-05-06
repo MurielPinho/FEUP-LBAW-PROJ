@@ -52,12 +52,14 @@ class ProductController extends Controller
 
 	public function edit(Buyer $Buyer)
 	{
-    	// display edit form
+    	echo 'ola';
 	}
 
-	public function update(Request $request, Buyer $Buyer)
+	public function editPage(Request $request, String $id)
 	{
-    	//
+        $product = Product::find($id);
+
+        return view('viewproduct-edit', ['product' => $product]);
 	}
 
 	public function destroy(Buyer $Buyer)

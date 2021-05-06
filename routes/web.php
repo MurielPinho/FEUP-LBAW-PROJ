@@ -28,6 +28,8 @@ Route::post('login', 'BuyerController@check_login')->name('login');
 //Products
 Route::get('products', 'ProductController@list');
 Route::get('products/{id}', 'ProductController@show');
+Route::get('product-edit/{id}', 'ProductController@editPage');
+Route::put('product-edit/{id}', 'ProductController@edit');
 
 
 // Cards

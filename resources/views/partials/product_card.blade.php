@@ -1,7 +1,7 @@
-<div class="card mb-3" style="max-width: 1000px;">
+<div class="card mb-3" style="max-width: 1000px">
     <div class="row g-0">
       <div class="col-md-5">
-        <img src="./assets/pc2.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+        <a href="/products/{{$product->id}}"> <img src="./assets/pc2.jpg" class="img-fluid rounded mx-auto d-block" alt="..."></a>
       </div>
       <div class="col-md-7">
         <div class="card-body">
@@ -17,3 +17,5 @@
       </div>
     </div>
   </div>
+
+

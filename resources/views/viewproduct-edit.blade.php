@@ -10,7 +10,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
+        <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
         <a class="navbar-brand" href="index.php">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
           <div class="col bg-light p-3 border">
-            <img src="./assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+            <img src="../assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
             <div class="mb-3">
               <input type="file" class="form-control" aria-label="file example" required>
               <div class="invalid-feedback">Example invalid form file feedback</div>
@@ -54,7 +54,7 @@
           <div class="col bg-light p-3 border">
             <h2>Name</h2>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Computer 1 2.1" aria-label="Computer 1 2.1" aria-describedby="button-addon2">
+              <input type="text" class="form-control" value={{$product->name}} name="name" aria-describedby="button-addon2">
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Name</button>
             </div>
           </div>
@@ -63,9 +63,9 @@
             <div class="form-floating">
               <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                 <option selected>Computer</option>
-                <option value="1">CD</option>
-                <option value="2">Phone</option>
-                <option value="3">Headphones</option>
+                <option >CD</option>
+                <option >Phone</option>
+                <option >Headphones</option>
               </select>
               <label for="floatingSelect">Category</label>
             </div>
@@ -73,15 +73,15 @@
           <div class="col bg-light p-3 border">
             <h2>Description</h2>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="This is a very good computer with some funcionalities." aria-label="This is a very good computer with some funcionalities." aria-describedby="button-addon2">
+              <input type="text" class="form-control" placeholder="This is a very good computer with some funcionalities." aria-label="This is a very good computer with some funcionalities." aria-describedby="button-addon2" name="description">
               <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Description</button>
             </div>
           </div>
           <div class="col bg-light p-3 border">
             <h2>Price</h2>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="399.99€" aria-label="399.99€" aria-describedby="button-addon2">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Price</button>
+              <input name="price" type="text" class="form-control" placeholder="399.99€" aria-label="399.99€" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="btnteste2" >Edit Price</button>
             </div>
           </div>
         </div>
@@ -95,4 +95,49 @@
     </footer>
 
   </body>
-</html>
+
+  <script defer>
+
+function encodeForAjax(data) {
+  if (data == null) return null;
+  return Object.keys(data).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+  }).join('&');
+}
+
+function sendAjaxRequest(method, url, data, handler) {
+  let request = new XMLHttpRequest();
+
+  request.open(method, url, true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.addEventListener('load', handler);
+  request.send(encodeForAjax(data));
+}
+
+      let teste = document.getElementById('btnteste2');
+      teste.addEventListener('click', function(e) {
+        let name = document.querySelector('input[name=name]').value;
+        let description = document.querySelector('input[name=description]').value;
+        let price = document.querySelector('input[name=price]').value;
+        let category = document.querySelector('select[id=floatingSelect]').value;
+        let id = window.location.href.split('/');
+        id = id[id.length-1];
+
+
+
+          if (name != '')
+          sendAjaxRequest('put', '/product-edit/' + id, {name,description,price,category});
+
+      })
+
+
+
+
+
+
+  </script>
+
+
+  </html>
+
+
