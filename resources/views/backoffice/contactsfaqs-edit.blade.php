@@ -10,7 +10,7 @@
   <body class="mb-5">
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
+        <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
         <a class="navbar-brand" href="index.php">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col p-5">
           <h2>Contacts</h2>
-          
+
           <div class="col bg-light p-3 border">
             <p>Phone number: xxx xxx xxx</p>
             <p>Address: Rua Dr. Algo Nr. X</p>
@@ -54,8 +54,8 @@
           </div>
           <h2> </h2>
           <h2>FAQ's</h2>
-          
-          
+
+
           <div class="col bg-light p-3 border">
             <h5>Who are we?</h5>
             <p>We are a store.</p>
@@ -74,7 +74,7 @@
         <div class="col">
           <h2 class="mt-2 px-4">Map</h2>
           <div class="col bg-light p-3 border m-3">
-            <img src="./assets/map.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width = "500" height = "500">
+            <img src="../assets/map.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width = "500" height = "500">
             <div class="mb-3">
               <input type="file" class="form-control" aria-label="file example" required>
               <div class="invalid-feedback">Example invalid form file feedback</div>
@@ -87,7 +87,7 @@
     </div>
 
 
-   
+
 
   </body>
   <footer class="navbar navbar-light bg-light fixed-bottom mt-3">
@@ -95,6 +95,6 @@
       <a class="navbar-brand mx-auto" href="contactsfaqs">Contacts | FAQ's</a>
     </div>
   </footer>
-  
+
 
 </html>

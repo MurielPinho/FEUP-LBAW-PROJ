@@ -17,8 +17,7 @@ Route::get('/viewcart', 'MainPageController@viewcart');
 Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
-Route::get('/backoffice/', 'BackOfficeController@home');
-Route::get('/backoffice/index', 'BackOfficeController@home');
+
 
 // Cards
 Route::get('cards', 'CardController@list');
@@ -37,3 +36,13 @@ Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('register', 'Auth\RegisterController@register');
+
+
+//Backoffice
+Route::get('/backoffice', 'BackOfficeController@home');
+Route::get('/backoffice/index.php', 'BackOfficeController@home');
+Route::get('/backoffice/users', 'BackOfficeController@users');
+Route::get('/backoffice/settings', 'BackOfficeController@settings');
+Route::get('/backoffice/products', 'BackOfficeController@products');
+Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
+

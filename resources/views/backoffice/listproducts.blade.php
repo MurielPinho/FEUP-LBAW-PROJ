@@ -10,7 +10,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
+        <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
         <a class="navbar-brand" href="index.php">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
                 <input>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col">
                 <h5>Category</h5>
@@ -62,12 +62,12 @@
                 <input>
             </div>
         </div>
-        
+
         <button class="btn btn-primary mt-3"><img src="https://pics.freeicons.io/uploads/icons/png/18860108731537184102-512.png" width=20>  Filter</button>
     </div>
-      
+
     <div class="container border rounded bg-light mx-auto m-3 p-3">
-        
+
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
                 <tr>
@@ -77,50 +77,50 @@
                     <th scope="col">Quantity</th>
                     <th scope="col">Action</th>
                 </tr>
-            </thead> 
-            
+            </thead>
+
             <tbody>
                 <tr>
                     <th scope="row">1</th>
-                    <td><img src="./assets/pc1.jpg" width=100></td>
+                    <td><img src="../assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>20</td>
                     <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
-                
+
                 <tr>
                     <th scope="row">2</th>
-                    <td><img src="./assets/pc1.jpg" width=100></td>
+                    <td><img src="../assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>50</td>
                     <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
-                
+
                 <tr>
                     <th scope="row">3</th>
-                    <td><img src="./assets/pc1.jpg" width=100></td>
+                    <td><img src="../assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>10</td>
                     <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
-                
+
                 <tr>
                     <th scope="row">4</th>
-                    <td><img src="./assets/pc1.jpg" width=100></td>
+                    <td><img src="../assets/pc1.jpg" width=100></td>
                     <td>Macbook air 16G 256GB</td>
                     <td>30</td>
                     <td> <button onclick="location.href='viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
                 </tr>
-            
+
             </tbody>
         </table>
-    
-        <button onclick="location.href='viewproduct-create'" class="btn mb-5 btn-primary">New Product</button>  
-      
+
+        <button onclick="location.href='viewproduct-create'" class="btn mb-5 btn-primary">New Product</button>
+
       </div>
-    
-      
-      
+
+
+
       <footer class="navbar navbar-light bg-light \ fixed-bottom">
         <div class="container-fluid">
           <a class="navbar-brand mx-auto" href="contactsfaqs">Contacts | FAQ's</a>

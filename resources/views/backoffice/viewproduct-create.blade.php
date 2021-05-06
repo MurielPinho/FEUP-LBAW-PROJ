@@ -10,7 +10,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
-        <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
+        <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
         <a class="navbar-brand" href="index.php">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -43,7 +43,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
           <div class="col bg-light p-1 border">
-            <img src="./assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+            <img src="../assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
             <div class="mt-3 mb-2 ml-2">
               <input type="file" class="form-control" aria-label="file example" required>
               <div class="invalid-feedback">Example invalid form file feedback</div>
@@ -89,7 +89,7 @@
       <button class="btn btn-primary me-md-2" type="button">Save Changes</button>
     </div>
     <h2> </h2>
-  
+
 
     <footer class="navbar navbar-light bg-light fixed-bottom">
       <div class="container-fluid">

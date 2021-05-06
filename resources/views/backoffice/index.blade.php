@@ -31,7 +31,7 @@
               <img src="../assets/iconsettings.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="../contactsfaqs-edit.html">Store Settings</a>
+                  <a class="nav-link" href="./backoffice/settings">Store Settings</a>
                 </h5>
               </div>
             </div>
@@ -41,13 +41,13 @@
               <img src="../assets/iconprofile.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="./manageusers.html">Manage Users</a>
+                  <a class="nav-link" href="./backoffice/users">Manage Users</a>
                 </h5>
               </div>
             </div>
           </div>
       </div>
-      
+
       <h2>Products</h2>
       <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
@@ -55,9 +55,9 @@
               <img src="../assets/iconaddproduct.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="300">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="../viewproduct-create.html">New Product</a>
+                  <a class="nav-link" href="./backoffice/newproduct">New Product</a>
                 </h5>
-              </div>    
+              </div>
             </div>
           </div>
           <div class="col">
@@ -65,7 +65,7 @@
               <img src="../assets/iconviewall.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="../listproducts.html">View All Products</a>
+                  <a class="nav-link" href="./backoffice/products">View All Products</a>
                 </h5>
               </div>
             </div>
