@@ -11,7 +11,7 @@
 |
 */
 // Home
-Route::get('/', 'MainPageController@home');
+Route::view('/', 'app');
 Route::get('/loginreg', 'MainPageController@login');
 Route::get('/viewcart', 'MainPageController@viewcart');
 Route::get('/productsearch', 'MainPageController@productsearch');
