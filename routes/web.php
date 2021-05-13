@@ -41,6 +41,10 @@ Route::get('/backoffice/settings', 'BackOfficeController@settings');
 Route::get('/backoffice/products', 'BackOfficeController@products');
 Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
 
+Route::get('/reviews', 'ReviewController@list');
+Route::get('reviews/{id}', 'ProductController@show');
+
+
 // Cards
 /*// Authentication
 Route::get('cards', 'CardController@list');
