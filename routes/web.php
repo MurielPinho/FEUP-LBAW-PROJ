@@ -22,9 +22,9 @@ Route::get('/viewproduct', 'MainPageController@viewproduct');
 //Buyers
 Route::get('buyers/{id}', 'BuyerController@show');
 Route::get('buyers', 'BuyerController@list');
-Route::post('register', 'BuyerController@create')->name('register');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('register', 'MainPageController@login');
-Route::post('login', 'BuyerController@check_login')->name('login');
+Route::post('Login', 'Auth\LoginController@login')->name('login');
 
 //Products
 Route::get('products', 'ProductController@list');
