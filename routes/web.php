@@ -32,6 +32,12 @@ Route::get('products/{id}', 'ProductController@show');
 Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
 
+//Cart
+Route::get('carts', 'CartController@list');
+Route::put('addcart/{id}', 'CartController@add');
+Route::get('cart/{id}', 'CartController@show');
+
+
 
 //Backoffice
 Route::get('/backoffice', 'BackOfficeController@home');
