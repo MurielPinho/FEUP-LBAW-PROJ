@@ -14,6 +14,7 @@
 Route::get('/', 'MainPageController@home');
 Route::get('/loginreg', 'MainPageController@login');
 Route::get('/viewcart', 'MainPageController@viewcart');
+
 Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
@@ -31,6 +32,13 @@ Route::get('products', 'ProductController@list');
 Route::get('products/{id}', 'ProductController@show');
 Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
+
+//Cart
+Route::get('carts', 'CartController@list');
+Route::put('addcart/{id}', 'CartController@add');
+Route::get('cart/{id}', 'CartController@show');
+Route::get('cart1/{id}', 'CartController@show1');
+
 
 
 //Backoffice

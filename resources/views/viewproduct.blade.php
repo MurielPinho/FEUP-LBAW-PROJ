@@ -53,8 +53,9 @@
             <p>{{$product->description}}</p>
             <h3>{{$product->price}}$</h3>
             <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-primary" type="button">Add to Cart</button>
-              <button class="btn btn-primary" type="button">Add to Wishlist</button>
+            <a href="{{ url('/addcart/' . $product->id) }}" type="button" class="btn btn-primary">Add to Cart</a>
+            <a type="button" class="btn btn-primary">Add to Wishlsit</a>
+              
             </div>
           </div>
           <h2> </h2>
