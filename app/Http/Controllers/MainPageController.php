@@ -32,12 +32,5 @@ class MainPageController extends Controller
         return view('viewproduct');
     }
 
-    public function loginregedit(Request $request, String $id)
-	{
-        $buyer = Buyer::find($id);
-
-        return view('loginreg-edit', ['buyer' => $buyer]);
-	}
-
 
 }

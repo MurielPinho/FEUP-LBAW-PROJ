@@ -32,6 +32,12 @@ class BuyerController extends Controller
 
 	}
 
+    public function loginregedit(Request $request, String $id)
+	{
+        $buyer = Buyer::find($id);
+
+        return view('loginreg-edit', ['buyer' => $buyer]);
+	}
 
 
     public function check_login (Request $request){
@@ -55,7 +61,7 @@ class BuyerController extends Controller
 
         echo $address->city;
 
-        return redirect('/');
+        return;
     }
 
     public function editcinfo (Request $request){
@@ -69,7 +75,7 @@ class BuyerController extends Controller
 
         echo $paymentMethod->cardNumber;
 
-        return redirect('/');
+        return;
     }
 
 

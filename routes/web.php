@@ -18,7 +18,7 @@ Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
 
-Route::get('loginreg-edit/{id}', 'MainPageController@loginregedit');
+Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
 
 //Buyers
 Route::get('buyers/{id}', 'BuyerController@show');
