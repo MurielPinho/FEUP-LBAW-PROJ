@@ -20,6 +20,7 @@ Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
 
+Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
 
 //Buyers
 Route::get('buyers/{id}', 'BuyerController@show');
@@ -29,11 +30,22 @@ Route::get('register', 'MainPageController@login');
 Route::get('login', 'MainPageController@login');
 Route::post('login', 'Auth\LoginController@authLogin');
 
-//products
+Route::post('editaddress', 'BuyerController@editaddress')->name('editaddress');
+Route::post('editcinfo', 'BuyerController@editcinfo')->name('editcinfo');
+
+
+
+//Products
 Route::get('products', 'ProductController@list');
 Route::get('products/{id}', 'ProductController@show');
 Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
+
+//Cart
+Route::get('carts', 'CartController@list');
+Route::put('addcart/{id}', 'CartController@add');
+Route::get('cart/{id}', 'CartController@show');
+
 
 
 //Backoffice
@@ -43,6 +55,9 @@ Route::get('/backoffice/users', 'BackOfficeController@users');
 Route::get('/backoffice/settings', 'BackOfficeController@settings');
 Route::get('/backoffice/products', 'BackOfficeController@products');
 Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
+
+Route::get('/reviews', 'ReviewController@list');
+Route::get('reviews/{id}', 'ProductController@show');
 
 // Cards
 /*// Authentication

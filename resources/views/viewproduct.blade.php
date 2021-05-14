@@ -25,27 +25,31 @@
             <p>{{$product->description}}</p>
             <h3>{{$product->price}}$</h3>
             <div class="d-grid gap-2 d-md-block">
-              <button class="btn btn-primary" type="button">Add to Cart</button>
-              <button class="btn btn-primary" type="button">Add to Wishlist</button>
+            <a href="{{ url('/addcart/' . $product->id) }}" type="button" class="btn btn-primary">Add to Cart</a>
+            <a type="button" class="btn btn-primary">Add to Wishlsit</a>
+              
             </div>
           </div>
           <h2> </h2>
           <div class="col bg-light p-3 border">
             <h2>Reviews</h2>
+            @foreach ($product->review as $r)
             <div class="card mb-3" style="max-width: 750px;">
-              <div class="row g-0">
-                <div class="col-md-2">
-                  <img src="../assets/user1.jpg" class="img-fluid rounded float-start h-100" alt="..." width = "150">
-                </div>
-                <div class="col-md-10">
-                  <div class="card-body">
-                    <h3 class="card-title">User 1</h3>
-                    <h4 class="card-text">5/5 Stars</h4>
-                    <p class="card-text">I really liked the Computer! Very good!</p>
+                <div class="row g-0">
+                  <div class="col-md-2">
+                    <img src="../assets/user1.jpg" class="img-fluid rounded float-start h-100" alt="..." width = "150">
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body">
+                      <h3 class="card-title">{{$r->buyer->name}}</h3>
+                      <h4 class="card-text">{{$r->rating}}/5 Stars</h4>
+                      <p class="card-text">{{$r->message}}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            @endforeach
+
           </div>
         </div>
     </div>
@@ -53,7 +57,7 @@
 
     <div class="col bg-light p-3 border">
       <h2>Q&A</h2>
-      <h3> </h3>
+      @foreach ($product->question as $q )
       <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-1">
@@ -61,27 +65,14 @@
           </div>
           <div class="col-md-11">
             <div class="card-body">
-              <h3 class="card-title">User 1</h3>
-              <p class="card-text">Is this a Good Computer?</p>
+              <h3 class="card-title">{{$q->buyer->name}}</h3>
+              <p class="card-text">{{$q->message}}</p>
             </div>
           </div>
         </div>
       </div>
-      <h3> </h3>
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-1">
-            <img src="../assets/admin.jpg" alt="..." class="img-fluid rounded float-start" width = "100" height = "100">
-          </div>
-          <div class="col-md-11">
-            <div class="card-body">
-              <h3 class="card-title">Admin</h3>
-              <p class="card-text">Of course! It's one of the best computers!</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      @endforeach
+      <div style="height: 10vh"></div>
     </div>
 
     <h2> </h2>
