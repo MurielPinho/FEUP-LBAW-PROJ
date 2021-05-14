@@ -30,6 +30,8 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/teste';
 
+    protected $username = 'name';
+
     /**
      * Create a new controller instance.
      *
@@ -54,6 +56,7 @@ class LoginController extends Controller
 
         return $byr; 
     }
+
 
     public function home() {
         return redirect('/login');
