@@ -34,4 +34,5 @@ class MainPageController extends Controller
         return view('viewproduct');
     }
 
+
 }

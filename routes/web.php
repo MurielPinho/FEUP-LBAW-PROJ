@@ -18,6 +18,7 @@ Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
 
+Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
 
 //Buyers
 Route::get('buyers/{id}', 'BuyerController@show');
@@ -25,6 +26,11 @@ Route::get('buyers', 'BuyerController@list');
 Route::post('register', 'BuyerController@create')->name('register');
 Route::get('register', 'MainPageController@login');
 Route::post('login', 'BuyerController@check_login')->name('login');
+
+Route::post('editaddress', 'BuyerController@editaddress')->name('editaddress');
+Route::post('editcinfo', 'BuyerController@editcinfo')->name('editcinfo');
+
+
 
 //Products
 Route::get('products', 'ProductController@list');
@@ -49,7 +55,6 @@ Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
 
 Route::get('/reviews', 'ReviewController@list');
 Route::get('reviews/{id}', 'ProductController@show');
-
 
 // Cards
 /*// Authentication
