@@ -19,7 +19,7 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
-    
+
     /**
      * Where to redirect users after login.
      *
@@ -34,15 +34,20 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        error_log('A');
         $this->middleware('guest')->except('logout');
     }
 
     public function getBuyer(){
-        return $request->buyer();
+        $byr = $request->buyer();
+
+        error_log($byr);
+
+        return $byr; 
     }
 
     public function home() {
-        return redirect('/teste');
+        return redirect('/login');
     }
 
 }

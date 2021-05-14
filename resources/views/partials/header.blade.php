@@ -1,3 +1,7 @@
+@if(Auth::check())
+  logged-in
+@endif
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
         <img src="./assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">

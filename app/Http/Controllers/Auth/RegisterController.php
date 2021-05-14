@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
+use App\Models\Buyer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -54,9 +54,6 @@ class RegisterController extends Controller
             'phonenumber' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
-
-        error_log(json_encode($data));
-        error_log(json_encode($vldtr->errors()));
 
         return $vldtr;
     }
