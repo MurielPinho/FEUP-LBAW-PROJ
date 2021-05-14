@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 // Home
 Route::get('/', 'MainPageController@home');
 Route::get('/loginreg', 'MainPageController@login');
@@ -23,9 +25,10 @@ Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
 //Buyers
 Route::get('buyers/{id}', 'BuyerController@show');
 Route::get('buyers', 'BuyerController@list');
-Route::post('register', 'BuyerController@create')->name('register');
+Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('register', 'MainPageController@login');
-Route::post('login', 'BuyerController@check_login')->name('login');
+Route::get('login', 'MainPageController@login');
+Route::post('login', 'Auth\LoginController@login')->name('login');
 
 Route::post('editaddress', 'BuyerController@editaddress')->name('editaddress');
 Route::post('editcinfo', 'BuyerController@editcinfo')->name('editcinfo');

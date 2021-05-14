@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/cards';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -34,15 +34,20 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        error_log('A');
         $this->middleware('guest')->except('logout');
     }
 
-    public function getUser(){
-        return $request->user();
+    public function getBuyer(){
+        $byr = $request->buyer();
+
+        error_log($byr);
+
+        return $byr; 
     }
 
     public function home() {
-        return redirect('login');
+        return redirect('/login');
     }
 
 }

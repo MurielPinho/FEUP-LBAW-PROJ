@@ -2,25 +2,33 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Buyer extends Model
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+ 
+class Buyer extends Authenticatable
 {
-  // Don't add create and update timestamps in database.
-  public $timestamps  = false;
-  protected $table = 'buyer';
+	use Notifiable;
 
-  /**
-   * The user this card belongs to
-   */
-//   public function user() {
-//     return $this->belongsTo('App\Models\User');
-//   }
 
-  /**
-   * Items inside this card
-   */
-//   public function items() {
-//     return $this->hasMany('App\Models\Item');
-//   }
+	// Don't add create and update timestamps in database.
+	public $timestamps  = false;
+	protected $table = 'buyer';
+
+	/**
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
+	 */
+	protected $fillable = [
+	    'name', 'email', 'phonenumber' , 'password',
+	];
+
+	/**
+	 * The attributes that should be hidden for arrays.
+	 *
+	 * @var array
+	 */
+	protected $hidden = [
+	    'password', 'remember_token',
+	];
 }

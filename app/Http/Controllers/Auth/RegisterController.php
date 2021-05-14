@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Models\User;
+use App\Models\Buyer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -27,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/cards';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -47,11 +48,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $vldtr = Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'phonenumber' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
+
+        return $vldtr;
     }
 
     /**
@@ -62,9 +66,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        error_log(json_encode($data));
+        return Buyer::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phonenumber' => $data['phonenumber'],
             'password' => bcrypt($data['password']),
         ]);
     }
