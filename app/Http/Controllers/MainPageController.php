@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\CartProduct;
 
 
 class MainPageController extends Controller
@@ -17,7 +18,8 @@ class MainPageController extends Controller
     }
 
     public function viewcart() {
-        return view('viewcart');
+        $cart = CartProduct::where('buyer_id',2)->get();
+        return view('viewcart', ['cart' => $cart]);
     }
     
     public function productsearch() {

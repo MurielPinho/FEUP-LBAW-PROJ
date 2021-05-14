@@ -68,7 +68,9 @@
     <h2>My Cart</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
-        @each('partials.cart_product',$cart,'product' )
+        @if (!empty($cart)) 
+          @each('partials.cart_product',$cart,'product' )
+        @endif
         </div>
         <div class="col">
             <h2>Cart</h2>
@@ -85,17 +87,18 @@
               $total = 0;
               $i = 0;
               use App\Models\Product;
-              foreach ($cart as $item) {
-                $prod = Product::find($item->product_id);
-                $total = $total+$prod->price;
-                $i++;
+              if(!empty($cart)){
+                foreach ($cart as $item) {
+                  $prod = Product::find($item->product_id);
+                  $total = $total+$prod->price;
+                  $i++;
               ?>
               <tr>
                 <th scope="row">{{$i}}</th>
                 <td>{{$prod->name}}</td>
                 <td>€ {{$prod->price}}</td>
               </tr><?php 
-              }
+              }}
               ?>
               <tr>
                 <th scope="row">Total</th>

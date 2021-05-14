@@ -50,13 +50,5 @@ class CartController extends Controller
 
 	}
 
-        public function show1(Request $request ,String $id)
-	{
-        $cart = CartProduct::where('buyer_id',$id)->get();
-        
-        return view('viewcart', ['cart' => $cart]);
-
-	}
-
 
 }
