@@ -55,6 +55,10 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
 
+        if($vldtr->fails()){
+            error_log(json_encode($vldtr->errors()));
+        }
+
         return $vldtr;
     }
 
