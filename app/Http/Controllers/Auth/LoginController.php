@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Buyer;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/teste';
 
     /**
      * Create a new controller instance.
@@ -34,8 +37,14 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        error_log('A');
         $this->middleware('guest')->except('logout');
+    }
+
+    public function authLogin(Request $request){
+        $cred = $request->only("name", "password");
+        error_log(json_encode($cred));
+        error_log(json_encode($request));
+        $this->login($request);
     }
 
     public function getBuyer(){

@@ -27,7 +27,7 @@ Route::get('buyers', 'BuyerController@list');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('register', 'MainPageController@login');
 Route::get('login', 'MainPageController@login');
-Route::post('login', 'Auth\LoginController@login')->name('login');
+Route::post('login', 'Auth\LoginController@authLogin');
 
 //products
 Route::get('products', 'ProductController@list');

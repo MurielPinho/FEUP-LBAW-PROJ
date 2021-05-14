@@ -15,16 +15,16 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <a class="nav-link" href="#">Login</a>
-            <form class="px-4 py-3" method=post action="login">
+            <form class="px-4 py-3" method="POST" action="login">
                {{ csrf_field() }}
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
+                  <input type="text" name="name" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
                   <div id="emailHelp" class="form-text">Insert the Username You are Registered with.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                  <input type="password" name="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Sign In</button>
               </form>
