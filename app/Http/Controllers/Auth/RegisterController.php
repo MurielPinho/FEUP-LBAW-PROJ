@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Log;
 
 class RegisterController extends Controller
 {
@@ -47,12 +48,17 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+        $vldtr = Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'phonenumber' => 'required|string',
+            'phonenumber' => 'required|string|max:255',
             'password' => 'required|string|min:6|confirmed',
         ]);
+
+        error_log(json_encode($data));
+        error_log(json_encode($vldtr->errors()));
+
+        return $vldtr;
     }
 
     /**
@@ -63,6 +69,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        error_log(json_encode($data));
         return Buyer::create([
             'name' => $data['name'],
             'email' => $data['email'],

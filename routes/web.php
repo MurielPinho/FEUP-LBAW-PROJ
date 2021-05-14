@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
 // Home
 Route::get('/', 'MainPageController@home');
 Route::get('/loginreg', 'MainPageController@login');
@@ -24,9 +26,10 @@ Route::get('buyers/{id}', 'BuyerController@show');
 Route::get('buyers', 'BuyerController@list');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('register', 'MainPageController@login');
-Route::post('Login', 'Auth\LoginController@login')->name('login');
+Route::get('login', 'MainPageController@login');
+Route::post('login', 'Auth\LoginController@login')->name('login');
 
-//Products
+//products
 Route::get('products', 'ProductController@list');
 Route::get('products/{id}', 'ProductController@show');
 Route::get('product-edit/{id}', 'ProductController@editPage');

@@ -15,7 +15,7 @@
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
             <a class="nav-link" href="#">Login</a>
-            <form class="px-4 py-3" method="POST" action="Login">
+            <form class="px-4 py-3" method=post action="login">
                {{ csrf_field() }}
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
@@ -31,7 +31,7 @@
         </div>
         <div class="col" >
             <a class="nav-link" href="#">Register</a>
-            <form class="px-4 py-3" method="POST" action="register">
+            <form class="px-4 py-3 mb-5" method="POST" action="register">
               {{ csrf_field() }}
                 <div class="mb-3">
                   <label for="exampleDropdownFormUser1" class="form-label">Email*</label>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleDropdownFormPassword1" class="form-label">Confirm Password*</label>
-                    <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+                    <input type="password" name="password_confirmation" class="form-control" id="exampleDropdownFormPassword1" placeholder="Confirm pessword">
                 
                     <br>* Required field
                   </div>
