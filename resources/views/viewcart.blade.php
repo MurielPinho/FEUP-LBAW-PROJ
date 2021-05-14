@@ -40,90 +40,9 @@
     <h2>My Cart</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
         <div class="col">
-          <div class="card mb-3" style="max-width: 750px;">
-            <div class="row g-0">
-              <div class="col-md-5">
-                <img src="./assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
-              </div>
-              <div class="col-md-7">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Product 1</h5>
-                  <h6 class="card-title">Category</h6>
-                  <h6 class="card-text">Price</h6>
-                  <p class="card-text">
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                      <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                          <option selected>1</option>
-                          <option value="1">2</option>
-                          <option value="2">3</option>
-                          <option value="3">4</option>
-                          <option value="4">5</option>
-                        </select>
-                        <label for="floatingSelect">Quantity</label>
-                      </div>
-                      <button class="btn btn-primary" type="button">Add More</button>
-                      <button class="btn btn-primary" type="button">Remove</button>
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mb-3" style="max-width: 750px;">
-            <div class="row g-0">
-              <div class="col-md-5">
-                <img src="./assets/pc2.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
-              </div>
-              <div class="col-md-7">
-                <div class="card-body">
-                  <h5 class="card-title">Product 2</h5>
-                  <h6 class="card-title">Category</h6>
-                  <h6 class="card-text">Price</h6>
-                  <p class="card-text">
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                      <div class="form-floating">
-                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                          <option selected>1</option>
-                          <option value="1">2</option>
-                          <option value="2">3</option>
-                          <option value="3">4</option>
-                          <option value="4">5</option>
-                        </select>
-                        <label for="floatingSelect">Quantity</label>
-                      </div>
-                      <button class="btn btn-primary" type="button">Add More</button>
-                      <button class="btn btn-primary" type="button">Remove</button>
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card mb-3" style="max-width: 750px;">
-            <div class="row g-0">
-              <div class="col-md-5">
-                <img src="./assets/pc1.jpg" alt="..." class="img-fluid rounded mx-auto d-block">
-              </div>
-              <div class="col-md-7">
-                <div class="card-body">
-                  <h5 class="card-title">Product 3</h5>
-                  <h6 class="card-title">Category</h6>
-                  <p class="card-text">Price</p>
-                  <p class="card-text"><small class="text-muted">Quantity</small></p>
-                  <p class="card-text">
-                    <div class="d-grid gap-2 col-6 mx-auto">
-                      <button class="btn btn-primary" type="button">Add More</button>
-                      <button class="btn btn-primary" type="button">Remove</button>
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        @if (!empty($cart)) 
+          @each('partials.cart_product',$cart,'product' )
+        @endif
         </div>
         <div class="col">
             <h2>Cart</h2>
@@ -136,26 +55,29 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Product 1</td>
-                  <td>Price</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Product 2</td>
-                  <td>Price</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Product 3</td>
-                  <td>Price</td>
-                </tr>
-                <tr>
-                  <th scope="row">Total</th>
-                  <td> </td>
-                  <td>Price</td>
-                </tr>
+              <?php 
+              $total = 0;
+              $i = 0;
+              use App\Models\Product;
+              if(!empty($cart)){
+                foreach ($cart as $item) {
+                  $prod = Product::find($item->product_id);
+                  $total = $total+$prod->price;
+                  $i++;
+              ?>
+              <tr>
+                <th scope="row">{{$i}}</th>
+                <td>{{$prod->name}}</td>
+                <td>€ {{$prod->price}}</td>
+              </tr><?php 
+              }}
+              ?>
+              <tr>
+                <th scope="row">Total</th>
+                <td> </td>
+                <td>€ {{$total}}</td>
+              </tr>
+               
               </tbody>
             </table>
             <a href="checkout" type="button" class="btn btn-primary">Checkout Cart</a>

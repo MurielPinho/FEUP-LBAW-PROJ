@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Answer extends Model
 {
   // Don't add create and update timestamps in database.
   public $timestamps  = false;
-  protected $table = 'product';
+  protected $table = 'answer';
 
   /**
    * The user this card belongs to
@@ -20,15 +20,8 @@ class Product extends Model
   /**
    * Items inside this card
    */
-  public function category() {
-    return $this->belongsTo('App\Models\Category');
-  }
+ /* public function category() {
+    return $this->belongsTo('App\Models\Product');
+  }*/
 
-  public function review() {
-    return $this->hasMany('App\Models\Review');
-  }
-
-  public function question() {
-    return $this->hasMany('App\Models\Question');
-  }
 }
