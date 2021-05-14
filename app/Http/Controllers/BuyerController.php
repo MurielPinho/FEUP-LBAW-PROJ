@@ -23,6 +23,7 @@ class BuyerController extends Controller
 
 	}
 
+
     public function show(Request $request ,String $id)
 	{
         $buyer = Buyer::find($id);
@@ -32,6 +33,7 @@ class BuyerController extends Controller
 	}
 
 
+
     public function check_login (Request $request){
 
         $user = Buyer::find($request->input('name'));
@@ -39,6 +41,35 @@ class BuyerController extends Controller
         echo $user->name;
 
         return;
+    }
+
+    public function editaddress (Request $request){
+
+        $address = new Address();
+        $address->city = $request->input('city');
+        $address->postalcard = $request->input('postalcard');
+        $address->door = $request->input('door');
+        $address->address = $request->input('address');
+
+        $address->save();
+
+        echo $address->city;
+
+        return redirect('/');
+    }
+
+    public function editcinfo (Request $request){
+
+        $paymentMethod = new PaymentMethod();
+        $paymentMethod->cardNumber = $request->input('cardNumber');
+        $paymentMethod->securityCode = $request->input('securityCode');
+        $paymentMethod->expirationDate = $request->input('expirationDate');
+
+        $paymentMethod->save();
+
+        echo $paymentMethod->cardNumber;
+
+        return redirect('/');
     }
 
 
