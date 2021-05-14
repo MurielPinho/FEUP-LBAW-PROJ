@@ -75,7 +75,7 @@
               <tr>
                 <th scope="row">Total</th>
                 <td> </td>
-                <td>€ {{$total}}</td>
+                <td> <b>€ {{$total}}</b></td>
               </tr>
                
               </tbody>

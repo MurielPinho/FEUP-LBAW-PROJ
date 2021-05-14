@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
         <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
-        <a class="navbar-brand" href="../index.php">Digital Prime</a>
+        <a class="navbar-brand" href="{{ url('/')}}">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,7 +31,7 @@
               <img src="../assets/iconsettings.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="/backoffice/settings">Store Settings</a>
+                  <a class="nav-link" href="{{ url('backoffice/settings')}}">Store Settings</a>
                 </h5>
               </div>
             </div>
@@ -41,7 +41,7 @@
               <img src="../assets/iconprofile.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="/backoffice/users">Manage Users</a>
+                  <a class="nav-link" href="{{ url('backoffice/users')}}">Manage Users</a>
                 </h5>
               </div>
             </div>
@@ -55,7 +55,7 @@
               <img src="../assets/iconaddproduct.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="300">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="/backoffice/newproduct">New Product</a>
+                  <a class="nav-link" href="{{ url('backoffice/newproduct')}}">New Product</a>
                 </h5>
               </div>
             </div>
@@ -65,7 +65,7 @@
               <img src="../assets/iconviewall.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="200">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="/backoffice/products">View All Products</a>
+                  <a class="nav-link" href="{{ url('backoffice/products')}}">View All Products</a>
                 </h5>
               </div>
             </div>
@@ -75,7 +75,7 @@
 
     <footer class="navbar navbar-light bg-light \ fixed-bottom">
       <div class="container-fluid">
-        <a class="navbar-brand mx-auto" href="../contactsfaqs">Contacts | FAQ's</a>
+        <a class="navbar-brand mx-auto" href="{{ url('contactsfaqs')}}">Contacts | FAQ's</a>
       </div>
     </footer>
 

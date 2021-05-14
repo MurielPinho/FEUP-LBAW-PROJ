@@ -13,12 +13,12 @@
 
 
 // Home
-Route::get('/', 'MainPageController@home');
-Route::get('/loginreg', 'MainPageController@login');
-Route::get('/viewcart', 'MainPageController@viewcart');
-Route::get('/productsearch', 'MainPageController@productsearch');
-Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
-Route::get('/viewproduct', 'MainPageController@viewproduct');
+Route::get('/', 'MainPageController@home')->name('/');
+Route::get('/loginreg', 'MainPageController@login')->name('loginreg');
+Route::get('/viewcart', 'MainPageController@viewcart')->name('viewcart');
+Route::get('/productsearch', 'MainPageController@productsearch')->name('productsearch');
+Route::get('/contactsfaqs', 'MainPageController@contactsfaqs')->name('contactsfaqs');
+Route::get('/viewproduct', 'MainPageController@viewproduct')->name('viewproduct');
 
 Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
 
@@ -49,12 +49,12 @@ Route::get('cart/{id}', 'CartController@show');
 
 
 //Backoffice
-Route::get('/backoffice', 'BackOfficeController@home');
+Route::get('/backoffice', 'BackOfficeController@home')->name('backoffice/');
 Route::get('/backoffice/index.php', 'BackOfficeController@home');
-Route::get('/backoffice/users', 'BackOfficeController@users');
-Route::get('/backoffice/settings', 'BackOfficeController@settings');
-Route::get('/backoffice/products', 'BackOfficeController@products');
-Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
+Route::get('/backoffice/users', 'BackOfficeController@users')->name('backoffice/users');
+Route::get('/backoffice/settings', 'BackOfficeController@settings')->name('backoffice/settings');
+Route::get('/backoffice/products', 'BackOfficeController@products')->name('backoffice/products');
+Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct')->name('backoffice/newproduct');
 
 Route::get('/reviews', 'ReviewController@list');
 Route::get('reviews/{id}', 'ProductController@show');
