@@ -26,7 +26,7 @@
             <h3>{{$product->price}}$</h3>
             <div class="d-grid gap-2 d-md-block">
             <a href="{{ url('/addcart/' . $product->id) }}" type="button" class="btn btn-primary">Add to Cart</a>
-            <a type="button" class="btn btn-primary">Add to Wishlsit</a>
+            <a type="button" class="btn btn-primary">Add to Wishlist</a>
               
             </div>
           </div>

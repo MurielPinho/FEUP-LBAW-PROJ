@@ -43,7 +43,7 @@ Route::put('product-edit/{id}', 'ProductController@edit');
 
 //Cart
 Route::get('carts', 'CartController@list');
-Route::put('addcart/{id}', 'CartController@add');
+Route::get('addcart/{id}', 'CartController@add');
 Route::get('cart/{id}', 'CartController@show');
 
 

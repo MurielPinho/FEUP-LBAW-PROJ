@@ -13,10 +13,17 @@ use PhpParser\Node\Expr\Cast\String_;
 
 class CartController extends Controller
 {
-    public function add(Request $request,String $id)
+    public function add(Request $request,$id)
     {
-        echo 'ola';
-        return ;
+        
+        $product = new CartProduct();
+        $product->buyer_id = 2;
+        $product->product_id = $id;
+        $product->quantity = 1;
+        $product->save();
+
+        return redirect('viewcart');
+      
     }
 
 	public function list()
