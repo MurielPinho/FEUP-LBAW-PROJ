@@ -13,9 +13,22 @@ DROP TABLE IF EXISTS question;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS buyer;
 DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS contact;
+DROP TABLE IF EXISTS faq;
 
 
 -- Tables
+
+CREATE TABLE faq(
+    question text NOT NULL,
+    answer text NOT NULL
+);
+
+CREATE TABLE contact(
+    phoneNumber text NOT NULL,
+    address text NOT NULL,
+    email text NOT NULL
+);
 
 CREATE TABLE category(
 	id SERIAL PRIMARY KEY,

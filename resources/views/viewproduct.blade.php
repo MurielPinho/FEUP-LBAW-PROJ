@@ -45,11 +45,13 @@
                     <div class="card-body">
                         <p class="text-danger" id="review-error" style="display: none">Text cannot be empty</p>
                         <p class="text-success" id="review-success" style="display: none">Success</p>
+                    @if (Auth::user())
                     <p>Write your review</p>
                     <input type="text" id="review-input" class="form-control" placeholder="Type here..."/>
                     <input type="number" id="review-rating" class="mt-1" name="quantity" value="5" min="1" max="5">
                     </div>
                     <button class="btn btn-success align-right mb-3 mx-3" onclick="sendReview({{$product->id}},{{Auth::user()->id}})">Submit</button>
+                    @endif
                   </div>
                 </div>
               </div>
@@ -84,6 +86,7 @@
             <div class="card-body">
             <p class="text-danger" id="question-error" style="display: none">Text cannot be empty</p>
             <p class="text-success" id="question-success" style="display: none">Success</p>
+            @if (Auth::user())
             <p>Ask a question :</p>
               <input type="text" id="question-input" class="form-control"  placeholder="Type here..."/>
 
@@ -94,8 +97,9 @@
             <div class="card-body">
                 <button class="btn btn-success align-right" onclick="sendQuestion({{$product->id}},{{Auth::user()->id}})">Submit</button>
             </div>
-
+            @endif
         </div>
+
 
       </div>
       @foreach ($product->question as $q )

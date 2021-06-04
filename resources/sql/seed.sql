@@ -12,9 +12,22 @@ DROP TABLE IF EXISTS question;
 DROP TABLE IF EXISTS product;
 DROP TABLE IF EXISTS buyer;
 DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS contact;
+DROP TABLE IF EXISTS faq;
 
 
 -- Tables
+
+CREATE TABLE faq(
+    question text NOT NULL,
+    answer text NOT NULL
+);
+
+CREATE TABLE contact(
+    phoneNumber text NOT NULL,
+    address text NOT NULL,
+    email text NOT NULL
+);
 
 CREATE TABLE category(
 	id SERIAL PRIMARY KEY,
@@ -127,6 +140,11 @@ CREATE TABLE promotion(
 	validUNTIL TIMESTAMP NOT NULL DEFAULT NOW()
 
 );
+
+insert into contact(phoneNumber, address, email) values ("912 821 438", "Rua de Baixo, 125", "contacto@digitalprime.com");
+insert into faq(question, answer) values ("Who are we?", "We are a store.");
+insert into faq(question, answer) values ("When do we deliver products?", "Every day.");
+insert into faq(question, answer) values ("How to Pay?", "Credit Card, MBWay, Paypal.");
 
 insert into address (city, postalcard, door, address) values ('Kōfu-shi', '955-624', '21', 'Fuller');
 

@@ -10,7 +10,9 @@
           <h6 class="card-text">{{$product->price}}$</h6>
           <p class="card-text">
             <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-primary" type="button">Add to Cart</button>
+              @if (Auth::user())
+              <button class="btn btn-primary" type="button" onclick="addCart({{$product->id}},{{Auth::user()->id}})">Add to Cart</button>
+              @endif
             </div>
           </p>
         </div>
