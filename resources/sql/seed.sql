@@ -104,10 +104,10 @@ CREATE TABLE cupon (
 	validUntil TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
-CREATE TABLE cartProduct(
+CREATE TABLE cartproduct(
+    id SERIAL PRIMARY KEY,
 	buyer_id INTEGER NOT NULL REFERENCES buyer (id) ON DELETE CASCADE ON UPDATE CASCADE,
 	product_id INTEGER NOT NULL REFERENCES product (id) ON DELETE CASCADE ON UPDATE CASCADE,
-	PRIMARY KEY (buyer_id,product_id),
 	quantity INTEGER NOT NULL CONSTRAINT quantity_ck CHECK (quantity > 0)
 
 );
@@ -202,6 +202,8 @@ insert into orderedProduct (buyer_id, product_id, quantity) values (1, 2, 3);
 
 insert into cartProduct (buyer_id, product_id, quantity ) values (1, 1, 3);
 insert into cartProduct (buyer_id, product_id, quantity ) values (1, 2, 1);
+insert into cartProduct (buyer_id, product_id, quantity ) values (2, 1, 1);
+insert into cartProduct (buyer_id, product_id, quantity ) values (2, 2, 1);
 
 
 

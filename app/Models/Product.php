@@ -24,4 +24,6 @@ class Product extends Model
   public function question() {
     return $this->hasMany('App\Models\Question');
   }
+
+
 }

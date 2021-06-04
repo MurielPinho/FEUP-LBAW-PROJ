@@ -20,17 +20,34 @@
                         <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                           @for ($i = 1; $i <= 5; $i++)
                           <option value="{{ $i }}" @if($product->quantity == $i) echo selected @endif>{{ $i }}</option>
-                          @endfor               
-                          
+                          @endfor
+
                         </select>
                         <label for="floatingSelect">Quantity</label>
                       </div>
-                      <button class="btn btn-primary" type="button">Add More</button>
-                      <button class="btn btn-primary" type="button">Remove</button>
+                      <button class="btn btn-primary" type="button" onclick="increase({{$prod->id}},{{Auth::user()->id}})">Add More</button>
+                      <button class="btn btn-primary" type="button" onclick="decrease({{$prod->id}},{{Auth::user()->id}})">Remove</button>
                     </div>
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
+          <script>
+            function handler(){
+               // window.location.reload()
+            }
+
+            function increase(buyer_id , product_id){
+                console.log(buyer_id,product_id )
+                sendAjaxRequest('post', '/increase' , { buyer_id,product_id,}, handler )
+            }
+
+            function decrease(buyer_id , product_id){
+                sendAjaxRequest('post', '/decrease' , {product_id, buyer_id}, handler )
+            }
+
+
+          </script>
 

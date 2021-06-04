@@ -26,7 +26,7 @@
             <p>{{$product->description}}</p>
             <h3>{{$product->price}}$</h3>
             <div class="d-grid gap-2 d-md-block">
-            <a href="{{ url('/addcart/' . $product->id) }}" type="button" class="btn btn-primary">Add to Cart</a>
+            <button  class="btn btn-primary" onclick="addCart({{$product->id}},{{Auth::user()->id}})">Add to Cart</button>
 
             </div>
           </div>
@@ -158,11 +158,15 @@
 
   </body>
 
-  <script defer>
+  <script>
 
       function sendQuestionHandler(){
           console.log("done")
           window.location.reload()
+      }
+
+      function handler(){
+
       }
 
       function sendQuestion(product_id, user_id){
@@ -192,6 +196,7 @@
             sendAjaxRequest('post', '/answers' , {text,question_id,user_id}, sendQuestionHandler )
           }
 
+        }
 
           function sendReview(product_id, user_id){
 
@@ -204,14 +209,11 @@
             let message = document.getElementById('review-success').style.display = 'block'
             sendAjaxRequest('post', '/reviews' , {text,product_id,user_id,rating}, sendQuestionHandler )
           }
-
-
-
       }
 
-
-
-
+      function addCart(product_id,buyer_id){
+        sendAjaxRequest('post', '/addcart' , {product_id,buyer_id}, handler )
+      }
 
   </script>
 </html>

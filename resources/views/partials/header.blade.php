@@ -8,15 +8,12 @@
         <div class="collapse navbar-collapse" id="navbarScroll">
           <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/backoffice">Settings</a>
+              <a class="nav-link" aria-current="page" href="/">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/viewcart">Shopping Cart</a>
-            </li>
+                <a class="nav-link active" aria-current="page" href="/productsearch">Products</a>
+              </li>
             @if (Auth::user())
                 @if (Auth::user()->isadmin)
                 <li class="nav-item">
@@ -27,8 +24,11 @@
 
             @if (Auth::user())
             <li class="nav-item">
-                <a class="nav-link" href="{{ url('/logout') }}"> logout </a>
+                <a class="nav-link" href="{{ url('/logout') }}"> Logout </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/viewcart">Shopping Cart</a>
+              </li>
             @else
             <li class="nav-item">
                 <a class="nav-link" href="loginreg">Login | Register</a>
@@ -38,10 +38,7 @@
 
 
           </ul>
-          <form class="d-flex" action="/products">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+
         </div>
       </div>
     </nav>

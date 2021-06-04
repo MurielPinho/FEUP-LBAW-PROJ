@@ -53,9 +53,11 @@ Route::delete('products/{id}', 'ProductController@destroy');
 Route::patch('products/{id}/', 'ProductController@update');
 
 //Cart
-Route::get('carts', 'CartController@list');
-Route::put('addcart/{id}', 'CartController@add');
-Route::get('cart/{id}', 'CartController@show');
+Route::get('cartes', 'CartController@list');
+Route::post('addcart', 'CartController@add');
+Route::post('decrease', 'CartController@decrease');
+Route::post('increase', 'CartController@increase');
+Route::get('cart', 'CartController@show');
 
 
 

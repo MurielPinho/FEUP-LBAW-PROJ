@@ -10,17 +10,16 @@ class CartProduct extends Model
   public $timestamps  = false;
   protected $table = 'cartproduct';
 
-  /**
-   * The user this card belongs to
-   */
-//   public function user() {
-//     return $this->belongsTo('App\Models\User');
-//   }
+  protected $fillable = [
+    'quantity'
+];
 
-  /**
-   * Items inside this card
-   */
-//   public function items() {
-//     return $this->hasMany('App\Models\Item');
-//   }
+
+   public function buyer() {
+    return $this->belongsTo('App\Models\Buyer');
+  }
+
+  public function product() {
+    return $this->belongsTo('App\Models\Product');
+  }
 }
