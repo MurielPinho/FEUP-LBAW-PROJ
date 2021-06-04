@@ -10,16 +10,9 @@ class Product extends Model
   public $timestamps  = false;
   protected $table = 'product';
 
-  /**
-   * The user this card belongs to
-   */
-//   public function user() {
-//     return $this->belongsTo('App\Models\User');
-//   }
-
-  /**
-   * Items inside this card
-   */
+  protected $fillable = [
+    'name', 'price', 'description' , 'category'
+];
   public function category() {
     return $this->belongsTo('App\Models\Category');
   }

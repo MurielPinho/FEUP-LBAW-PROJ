@@ -23,5 +23,12 @@ class Answer extends Model
  /* public function category() {
     return $this->belongsTo('App\Models\Product');
   }*/
+  public function buyer() {
+    return $this->belongsTo('App\Models\Buyer');
+  }
+
+  public function question() {
+    return $this->belongsTo('App\Models\Question');
+  }
 
 }

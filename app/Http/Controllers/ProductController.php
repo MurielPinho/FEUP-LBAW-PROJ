@@ -36,13 +36,23 @@ class ProductController extends Controller
 
 	public function create(Request $request)
 	{
-        
+
 	}
 
 
-	public function edit(Buyer $Buyer)
+	public function update(Request $r, String $id)
 	{
-    	echo 'ola';
+    	echo('ola');
+        echo($id);
+
+
+        $name = $r->input('name');
+        $price = $r->input('price');
+        $description = $r->input('description');
+        $category = $r->input('category');
+
+        $product = Product::find($id);
+        $product->update(['name'=>  $name, 'price' => $price , 'description' => $description , 'category_id' => $category]);
 	}
 
 	public function editPage(Request $request, String $id)
@@ -52,8 +62,11 @@ class ProductController extends Controller
         return view('viewproduct-edit', ['product' => $product]);
 	}
 
-	public function destroy(Buyer $Buyer)
+	public function destroy(Buyer $Buyer ,String $id)
 	{
-    	//
+        $product = Product::find($id);
+        $product->delete();
+
+        return $product;
 	}
 }

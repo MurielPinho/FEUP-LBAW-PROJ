@@ -10,53 +10,35 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
     /**
-     * Where to redirect users after login.
+     * Handle an authentication attempt.
      *
-     * @var string
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
-    protected $redirectTo = '/teste';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function authenticate(Request $request)
     {
-        $this->middleware('guest')->except('logout');
+
+            var_dump( $request->only('email','password'));
+        if (Auth::attempt( $request->only('email','password'))) {
+            $request->session()->regenerate();
+
+            return redirect()->intended('/');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 
-    public function authLogin(Request $request){
-        $cred = $request->only("name", "password");
-        error_log(json_encode($cred));
-        error_log(json_encode($request));
-        $this->login($request);
-    }
+    public function logout(Request $request)
+{
+    Auth::logout();
 
-    public function getBuyer(){
-        $byr = $request->buyer();
+    $request->session()->invalidate();
 
-        error_log($byr);
+    $request->session()->regenerateToken();
 
-        return $byr; 
-    }
-
-    public function home() {
-        return redirect('/login');
-    }
-
+    return redirect('/');
+}
 }

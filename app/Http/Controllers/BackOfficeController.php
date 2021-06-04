@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Buyer;
+use App\Models\Product;
 
 
 class BackOfficeController extends Controller
@@ -13,13 +15,15 @@ class BackOfficeController extends Controller
     }
 
     public function users(){
-        return view('backoffice/manageusers');
+        $buyers = Buyer::all();
+        return view('backoffice/manageusers' ,['buyers' => $buyers]);
     }
     public function settings(){
         return view('backoffice/contactsfaqs-edit');
     }
     public function products(){
-        return view('backoffice/listproducts');
+        $products = Product::all();
+        return view('backoffice/listproducts' ,['products' => $products]);
     }
     public function newproduct(){
         return view('backoffice/viewproduct-create');

@@ -43,6 +43,17 @@ class ReviewController extends Controller
 	public function create(Request $request)
 	{
 
+        $review = new Review();
+        $review->message = $request->input('text');
+        $review->buyer_id = $request->input('user_id');
+        $review->product_id = $request->input('product_id');
+        $review->rating = $request->input('rating');
+
+
+        echo($review);
+
+        $review->save();
+
 	}
 
 

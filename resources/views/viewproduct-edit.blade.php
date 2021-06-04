@@ -6,59 +6,73 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <script defer type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
   </head>
   <body>
     @include("partials.header")
-
-
-    <h2>Edit Product</h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="row row-cols-1 row-cols-md-2 g-4 mt-1">
         <div class="col">
-          <div class="col bg-light p-3 border">
-            <img src="../assets/pc1.jpg" class="img-fluid rounded mx-auto d-block" alt="...">
+          <div class="col bg-light p-2 border">
+            <img src="../assets/pc1.jpg" id="output" class="img-fluid rounded mx-auto d-block" alt="...">
             <div class="mb-3">
-              <input type="file" class="form-control" aria-label="file example" required>
+                <form>
+                    <input type="file" class="form-control" aria-label="file example"  onchange="loadFile(event)" required>
+                    <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
+                        Upload Image
+                    </button>
+
+                </form>
+
               <div class="invalid-feedback">Example invalid form file feedback</div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="col bg-light p-3 border">
-            <h2>Name</h2>
+          <div class="col bg-light p-2 border">
+            <h3>Name</h3>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" value={{$product->name}} name="name" aria-describedby="button-addon2">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Name</button>
+              <input type="text" class="form-control" value="{{$product->name}}" name="name" aria-describedby="button-addon2">
             </div>
           </div>
-          <div class="col bg-light p-3 border">
-            <h2>Category</h2>
+          <div class="col bg-light p-2 border">
+            <h3>Category {{$product->category->name}}</h3>
             <div class="form-floating">
-              <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                <option selected>Computer</option>
-                <option >CD</option>
-                <option >Phone</option>
-                <option >Headphones</option>
+              <select class="form-select" id="floatingSelect" aria-label="Floating label select example" >
+                 <option <?=$product->category->name == 'Smartphone' ? ' selected="selected"' : '';?> >Smartphone</option>
+                 <option <?=$product->category->name == 'Mouse' ? ' selected="selected"' : '';?> >Mouse</option>
+                 <option <?=$product->category->name == 'Notebook' ? ' selected="selected"' : '';?> >Notebook</option>
+                 <option <?=$product->category->name == 'Wearable' ? ' selected="selected"' : '';?> >Wearable</option>
+                 <option <?=$product->category->name == 'Headset' ? ' selected="selected"' : '';?> >Headset</option>
+                 <option <?=$product->category->name == 'Graphics Card' ? ' selected="selected"' : '';?> >Graphics Card</option>
+                 <option <?=$product->category->name == 'Storage' ? ' selected="selected"' : '';?> >Storage</option>
+                 <option <?=$product->category->name == 'Keyboard' ? ' selected="selected"' : '';?> >Keyboard</option>
+                 <option <?=$product->category->name == 'Motherboard' ? ' selected="selected"' : '';?> >Motherboard</option>
+                 <option <?=$product->category->name == 'RAM' ? ' selected="selected"' : '';?> >RAM</option>
+
+
               </select>
               <label for="floatingSelect">Category</label>
             </div>
           </div>
-          <div class="col bg-light p-3 border">
-            <h2>Description</h2>
+          <div class="col bg-light p-2 border">
+            <h3>Description</h3>
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="This is a very good computer with some funcionalities." aria-label="This is a very good computer with some funcionalities." aria-describedby="button-addon2" name="description">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Edit Description</button>
+              <input type="text" class="form-control" value="{{$product->description}}" aria-describedby="button-addon2" name="description">
             </div>
           </div>
-          <div class="col bg-light p-3 border">
-            <h2>Price</h2>
+          <div class="col bg-light p-2 border">
+            <h3>Price</h3>
             <div class="input-group mb-3">
-              <input name="price" type="text" class="form-control" placeholder="399.99€" aria-label="399.99€" aria-describedby="button-addon2">
-              <button class="btn btn-outline-secondary" type="button" id="btnteste2" >Edit Price</button>
+              <input name="price" type="text" class="form-control"  value="{{$product->price}}" aria-describedby="button-addon2">
             </div>
           </div>
+
+            <button class="btn btn-success mt-3 " onclick="updateProduct({{$product->id}})">Save</button>
+
         </div>
+
     </div>
-    <h2> </h2>
+    <h3> </h3>
 
     @include("partials.footer")
 
@@ -66,44 +80,30 @@
 
   <script defer>
 
-function encodeForAjax(data) {
-  if (data == null) return null;
-  return Object.keys(data).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-  }).join('&');
+    function handler(){
+          console.log("pedido recebido")
+      }
+
+
+    function updateProduct(id) {
+       console.log(id)
+       let description = document.querySelector('input[name=description]').value
+       let name = document.querySelector('input[name=name]').value
+       let price = document.querySelector('input[name=price]').value
+       let category = document.querySelector('select').selectedIndex + 1;
+       let image = document.querySelector('select').selectedIndex + 1;
+       console.log( document.querySelector('input[type=file]'))
+       sendAjaxRequest('put', '/product/'+id , {description, name, price,category}, handler )
+    }
+
+    var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
 }
-
-function sendAjaxRequest(method, url, data, handler) {
-  let request = new XMLHttpRequest();
-
-  request.open(method, url, true);
-  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  request.addEventListener('load', handler);
-  request.send(encodeForAjax(data));
-}
-
-      let teste = document.getElementById('btnteste2');
-      teste.addEventListener('click', function(e) {
-        let name = document.querySelector('input[name=name]').value;
-        let description = document.querySelector('input[name=description]').value;
-        let price = document.querySelector('input[name=price]').value;
-        let category = document.querySelector('select[id=floatingSelect]').value;
-        let id = window.location.href.split('/');
-        id = id[id.length-1];
-
-
-
-          if (name != '')
-          sendAjaxRequest('put', '/product-edit/' + id, {name,description,price,category});
-
-      })
-
-
-
-
-
 
   </script>
+
+
 
 
   </html>

@@ -18,9 +18,9 @@
             <form class="px-4 py-3" method="POST" action="login">
                {{ csrf_field() }}
                 <div class="mb-3">
-                  <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
-                  <input type="text" name="name" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
-                  <div id="emailHelp" class="form-text">Insert the Username You are Registered with.</div>
+                  <label for="exampleDropdownFormEmail1" class="form-label">Email</label>
+                  <input type="text" name="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email">
+                  <div id="emailHelp" class="form-text">Insert the email You are Registered with.</div>
                 </div>
                 <div class="mb-3">
                   <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
@@ -52,10 +52,10 @@
                 <div class="mb-3">
                     <label for="exampleDropdownFormPassword1" class="form-label">Confirm Password*</label>
                     <input type="password" name="password_confirmation" class="form-control" id="exampleDropdownFormPassword1" placeholder="Confirm pessword">
-                
+
                     <br>* Required field
                   </div>
-                
+
                 <button type="submit" class="btn btn-primary">Sign Up</button>
               </form>
         </div>

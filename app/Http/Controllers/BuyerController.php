@@ -12,16 +12,28 @@ class BuyerController extends Controller
 {
 	public function list()
 	{
-       $buyers = Buyer::all();
+       //$buyers = Buyer::all();
+      $buyers =  Buyer::search('emantrigo')->get();
        foreach ($buyers as $buyer){
-            echo $buyer->name;
-            echo " : ";
-            echo $buyer->email ;
-            echo "<br>";
+            echo $buyer;
        }
        return;
 
 	}
+
+    public function search(Request $r){
+
+    }
+
+    public function toggleAdmin(Request $r){
+       $buyer = Buyer::find($r->input('id'));
+        $buyer->update(['isadmin' => !$buyer->isadmin]);
+        echo($buyer);
+
+       // var_dump($r);
+
+
+    }
 
 
     public function show(Request $request ,String $id)
@@ -104,8 +116,13 @@ class BuyerController extends Controller
     	//
 	}
 
-	public function destroy(Buyer $Buyer)
+	public function destroy(Request $r,String $id)
 	{
-    	//
+        $buyer = Buyer::find($id);
+        $buyer->delete();
+
+        return $buyer;
+
+
 	}
 }

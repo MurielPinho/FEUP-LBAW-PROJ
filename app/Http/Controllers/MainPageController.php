@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\CartProduct;
+use Illuminate\Support\Facades\Auth;
 
 
 class MainPageController extends Controller
@@ -21,7 +22,7 @@ class MainPageController extends Controller
         $cart = CartProduct::where('buyer_id',2)->get();
         return view('viewcart', ['cart' => $cart]);
     }
-    
+
     public function productsearch() {
         return view('productsearch');
     }

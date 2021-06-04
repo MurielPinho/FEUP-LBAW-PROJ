@@ -5,6 +5,7 @@
     <title>Digital Prime</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script  type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
   </head>
   <body>
@@ -74,44 +75,27 @@
                     <th scope="col">ID</th>
                     <th scope="col">Image</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td><img src="../assets/pc1.jpg" width=100></td>
-                    <td>Macbook air 16G 256GB</td>
-                    <td>20</td>
-                    <td> <button onclick="location.href='../viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
-                </tr>
 
-                <tr>
-                    <th scope="row">2</th>
+                @foreach ($products as $p )
+                <tr id="product-row-{{$p->id}}">
+                    <th scope="row">{{$p->id}}</th>
                     <td><img src="../assets/pc1.jpg" width=100></td>
-                    <td>Macbook air 16G 256GB</td>
-                    <td>50</td>
-                    <td> <button onclick="location.href='../viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
+                    <td>{{$p->name}}</td>
+                    <td>{{$p->price}}$</td>
+                    <td>{{$p->quantity}}</td>
+                    <td>
+                        <button onclick="location.href='../product-edit/{{$p->id}}'" class="btn btn-primary me-md-2" type="button">Edit</button>
+                        <button onclick="deleteProduct({{$p->id}})" class="btn btn-danger me-md-2" type="button">Delete</button>
+                    </td>
                 </tr>
-
-                <tr>
-                    <th scope="row">3</th>
-                    <td><img src="../assets/pc1.jpg" width=100></td>
-                    <td>Macbook air 16G 256GB</td>
-                    <td>10</td>
-                    <td> <button onclick="location.href='../viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
-                </tr>
-
-                <tr>
-                    <th scope="row">4</th>
-                    <td><img src="../assets/pc1.jpg" width=100></td>
-                    <td>Macbook air 16G 256GB</td>
-                    <td>30</td>
-                    <td> <button onclick="location.href='../viewproduct-edit'" class="btn btn-primary me-md-2" type="button">Edit</button> </td>
-                </tr>
-
+                @endforeach
             </tbody>
         </table>
 
@@ -129,4 +113,24 @@
 
 
   </body>
+
+  <script defer>
+
+function deleteHandler(){
+        if (this.status != 200) console.log("error deleting")
+        else {
+            console.log("recieved" + this.responseText)
+            let product = JSON.parse(this.responseText);
+            let element = document.getElementById('product-row-'+product.id);
+            element.remove();
+        }
+
+
+      }
+
+      function deleteProduct(id) {
+        console.log(id)
+        sendAjaxRequest('delete', '/products/' + id, null, deleteHandler )
+    }
+  </script>
 </html>

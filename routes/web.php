@@ -11,6 +11,12 @@
 |
 */
 
+//Tests
+
+use App\Http\Controllers\ReviewController;
+
+Route::post('/toggleadmin', 'BuyerController@toggleAdmin');
+
 
 // Home
 Route::get('/', 'MainPageController@home');
@@ -19,6 +25,7 @@ Route::get('/viewcart', 'MainPageController@viewcart');
 Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
 
@@ -28,7 +35,9 @@ Route::get('buyers', 'BuyerController@list');
 Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('register', 'MainPageController@login');
 Route::get('login', 'MainPageController@login');
-Route::post('login', 'Auth\LoginController@authLogin');
+Route::post('login', 'Auth\LoginController@authenticate');
+
+Route::delete('buyers/{id}', 'BuyerController@destroy');
 
 Route::post('editaddress', 'BuyerController@editaddress')->name('editaddress');
 Route::post('editcinfo', 'BuyerController@editcinfo')->name('editcinfo');
@@ -40,6 +49,8 @@ Route::get('products', 'ProductController@list');
 Route::get('products/{id}', 'ProductController@show');
 Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
+Route::delete('products/{id}', 'ProductController@destroy');
+Route::patch('products/{id}/', 'ProductController@update');
 
 //Cart
 Route::get('carts', 'CartController@list');
@@ -59,22 +70,11 @@ Route::get('/backoffice/newproduct', 'BackOfficeController@newproduct');
 Route::get('/reviews', 'ReviewController@list');
 Route::get('reviews/{id}', 'ProductController@show');
 
-// Cards
-/*// Authentication
-Route::get('cards', 'CardController@list');
-Route::get('cards/{id}', 'CardController@show');
+//Questions
+Route::post('questions', 'QuestionController@create');
 
-// API
-Route::put('api/cards', 'CardController@create');
-Route::delete('api/cards/{card_id}', 'CardController@delete');
-Route::put('api/cards/{card_id}/', 'ItemController@create');
-Route::post('api/item/{id}', 'ItemController@update');
-Route::delete('api/item/{id}', 'ItemController@delete');
+//Answers
+Route::post('answers', 'AnswerController@create');
 
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('register', 'Auth\RegisterController@register');
-*/
-
+//Reviews
+Route::post('reviews', 'ReviewController@create');
