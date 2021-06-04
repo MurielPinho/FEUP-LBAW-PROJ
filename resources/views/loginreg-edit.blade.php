@@ -6,10 +6,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <script defer type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
   </head>
   <body>
-    
+
     @include("partials.header")
 
 
@@ -21,11 +22,11 @@
             <form class="px-4 py-3">
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username">
+                  <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Username" value="{{$buyer->name}}">
                 </div>
                 <div class="mb-3">
                   <label for="exampleDropdownFormEmail1" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Email">
+                  <input type="text" class="form-control" id="exampleDropdownFormEmail1" placeholder="Email"  value="{{$buyer->email}}">
                 </div>
             </form>
             <h3>Change Password</h3>
@@ -97,10 +98,24 @@
     </div>
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <button class="btn btn-primary me-md-2 btn-lg" type="button" name="submit1">>Save Changes</button>
+      <button class="btn btn-danger me-md-2 btn-lg" type="button" onclick="deleteuser({{Auth::user()->id}})" >Delete Account</button>
+      <button class="btn btn-primary me-md-2 btn-lg" type="button" name="submit1" >Save Changes</button>
     </div>
-    
+
     @include("partials.footer")
+
+
+    <script defer>
+
+        function handler(){
+            window.location.href = "/"
+        }
+
+        function deleteuser(id){
+            sendAjaxRequest('delete', '/buyers/' + id, null, handler )
+        }
+
+    </script>
 
 
   </body>

@@ -36,9 +36,7 @@ Route::post('register', 'Auth\RegisterController@register')->name('register');
 Route::get('register', 'MainPageController@login');
 Route::get('login', 'MainPageController@login');
 Route::post('login', 'Auth\LoginController@authenticate');
-
 Route::delete('buyers/{id}', 'BuyerController@destroy');
-
 Route::post('editaddress', 'BuyerController@editaddress')->name('editaddress');
 Route::post('editcinfo', 'BuyerController@editcinfo')->name('editcinfo');
 
@@ -51,6 +49,7 @@ Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
 Route::delete('products/{id}', 'ProductController@destroy');
 Route::patch('products/{id}/', 'ProductController@update');
+Route::post('uploadproduct', 'ProductController@upload')->name('uploadproduct');
 
 //Cart
 Route::get('cartes', 'CartController@list');

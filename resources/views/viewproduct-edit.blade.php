@@ -15,9 +15,9 @@
           <div class="col bg-light p-2 border">
             <img src="../assets/pc1.jpg" id="output" class="img-fluid rounded mx-auto d-block" alt="...">
             <div class="mb-3">
-                <form>
+                <form method="post" enctype="multipart/form-data"  action="{{route('uploadproduct')}}" >
                     <input type="file" class="form-control" aria-label="file example"  onchange="loadFile(event)" required>
-                    <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
+                    <button type="submit" id="uploadfilebtn" name="submit" class="btn btn-primary btn-block mt-4">
                         Upload Image
                     </button>
 
@@ -83,7 +83,9 @@
     function handler(){
           console.log("pedido recebido")
       }
-
+      document.getElementById("uploadfilebtn").addEventListener("click", function(event){
+  event.preventDefault()
+});
 
     function updateProduct(id) {
        console.log(id)

@@ -98,7 +98,7 @@
 
       }
 
-    function toggleAdmin(id) {
+    function toggleadmin(id) {
        // console.log(id)
     sendAjaxRequest('post', '/toggleadmin' , {'id' : id }, handler )
     }

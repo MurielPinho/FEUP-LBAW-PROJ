@@ -69,4 +69,11 @@ class ProductController extends Controller
 
         return $product;
 	}
+
+
+	public function upload(Request $r )
+	{
+        error_log("ola");
+
+	}
 }

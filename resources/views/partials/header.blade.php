@@ -12,7 +12,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/productsearch">Products</a>
+                <a class="nav-link active" aria-current="page" href="/products">Products</a>
               </li>
             @if (Auth::user())
                 @if (Auth::user()->isadmin)
@@ -23,6 +23,9 @@
             @endif
 
             @if (Auth::user())
+            <li class="nav-item">
+                <a class="nav-link" href="/loginreg-edit/{{Auth::user()->id}}"> Edit Profile </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/logout') }}"> Logout </a>
             </li>

@@ -26,7 +26,13 @@
             <p>{{$product->description}}</p>
             <h3>{{$product->price}}$</h3>
             <div class="d-grid gap-2 d-md-block">
-            <button  class="btn btn-primary" onclick="addCart({{$product->id}},{{Auth::user()->id}})">Add to Cart</button>
+
+            @if (Auth::user())
+      @if (Auth::user()->isadmin)
+      <button  class="btn btn-primary" onclick="addCart({{$product->id}},{{Auth::user()->id}})">Add to Cart</button>
+      <a  class="btn btn-primary" href="/product-edit/{{$product->id}}">Edit</a>
+      @endif
+  @endif
 
             </div>
           </div>

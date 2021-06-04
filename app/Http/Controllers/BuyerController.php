@@ -12,8 +12,7 @@ class BuyerController extends Controller
 {
 	public function list()
 	{
-       //$buyers = Buyer::all();
-      $buyers =  Buyer::search('emantrigo')->get();
+       $buyers = Buyer::all();
        foreach ($buyers as $buyer){
             echo $buyer;
        }
@@ -108,7 +107,7 @@ class BuyerController extends Controller
 
 	public function edit(Buyer $Buyer)
 	{
-    	// display edit form
+
 	}
 
 	public function update(Request $request, Buyer $Buyer)

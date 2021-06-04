@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\CartProduct;
+use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -11,7 +12,8 @@ class MainPageController extends Controller
 {
 
     public function home() {
-        return view('index');
+        $p = Product::all();
+        return view('index' , ['products' => $p]);
     }
 
     public function login() {
