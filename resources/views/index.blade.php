@@ -43,12 +43,12 @@
 
 
 
-    <ul class="nav nav-tabs mx-auto">
+    <ul class="nav nav-tabs mx-auto" id="myTab">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Latest Promotions</a>
+        <a class="nav-link active" aria-current="page" href="#">Top Sales</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Top Sales</a>
+        <a class="nav-link" href="#">Latest Promotions</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">New Arrivals</a>
@@ -60,43 +60,43 @@
 
     <div class="row row-cols-1 row-cols-md-3 g-3 mt-2 w-90 mx-auto">
       <div class="col">
-        <a href="viewproduct">
+        <a href="products/1">
           <div class="card h-100">
-            <img src="./assets/pc1.jpg" class="card-img-top" alt="..." height="300">
+            <img src="../assets/SteelseriesAerox3RGB.jpeg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Mega Computer v2</h5>
-              <p class="card-text">This is a very good computer with lots of funcionalities.</p>
+              <h5 class="card-title">Steelseries Aerox 3 RGB</h5>
+              <p class="card-text">Mouse</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">999.99€</small>
+              <small class="text-muted">110€</small>
             </div>
           </div>
         </a>
       </div>
       <div class="col">
-        <a href="viewproduct">
+        <a href="products/2">
           <div class="card h-90">
-            <img src="./assets/pc2.jpg" class="card-img-top" alt="..." height="300">
+            <img src="../assets/HyperXCloudII.jpeg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Super Computer</h5>
-              <p class="card-text">This is a very good computer with even more funcionalities.</p>
+              <h5 class="card-title">HyperX Cloud II</h5>
+              <p class="card-text">Headset</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">399.99€</small>
+              <small class="text-muted">85€</small>
             </div>
           </div>
         </a>
       </div>
       <div class="col">
-        <a href="viewproduct">
+        <a href="products/3">
           <div class="card h-100">
-            <img src="./assets/pc3.jpg" class="card-img-top" alt="..." height="300">
+            <img src="../assets/XiaomiPocoF3.jpeg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
-              <h5 class="card-title">Medium Computer</h5>
-              <p class="card-text">This is a very good computer with some funcionalities.</p>
+              <h5 class="card-title">Xiaomi Poco F3</h5>
+              <p class="card-text">Smartphone</p>
             </div>
             <div class="card-footer">
-              <small class="text-muted">299.99€</small>
+              <small class="text-muted">400€</small>
             </div>
           </div>
         </a>
