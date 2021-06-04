@@ -59,48 +59,9 @@
 
 
     <div class="row row-cols-1 row-cols-md-3 g-3 mt-2 w-90 mx-auto">
-      <div class="col">
-        <a href="products/1">
-          <div class="card h-100">
-            <img src="../assets/SteelseriesAerox3RGB.jpeg" class="card-img-top" alt="..." height="300">
-            <div class="card-body">
-              <h5 class="card-title">Steelseries Aerox 3 RGB</h5>
-              <p class="card-text">Mouse</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">110€</small>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="products/2">
-          <div class="card h-90">
-            <img src="../assets/HyperXCloudII.jpeg" class="card-img-top" alt="..." height="300">
-            <div class="card-body">
-              <h5 class="card-title">HyperX Cloud II</h5>
-              <p class="card-text">Headset</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">85€</small>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col">
-        <a href="products/3">
-          <div class="card h-100">
-            <img src="../assets/XiaomiPocoF3.jpeg" class="card-img-top" alt="..." height="300">
-            <div class="card-body">
-              <h5 class="card-title">Xiaomi Poco F3</h5>
-              <p class="card-text">Smartphone</p>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">400€</small>
-            </div>
-          </div>
-        </a>
-      </div>
+       @if (!empty($products))
+          @each('partials.product_card_home',$products->slice(0, 3),'product' )
+        @endif
     </div>
 
     <nav aria-label="Page navigation example" class="mt-3 mr-0">
@@ -112,6 +73,9 @@
         <li class="page-item"><a class="page-link" href="#">Next</a></li>
       </ul>
     </nav>
+
+    
+
 
     @include("partials.footer")
 
