@@ -1,5 +1,5 @@
 <div class="col">
-        <a href="products/1">
+        <a href="products/{{$product->id}}">
           <div class="card h-100">
             <img src="./assets/products/{{$product->id}}.jpg" class="card-img-top" alt="..." height="300">
             <div class="card-body">
