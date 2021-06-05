@@ -141,10 +141,10 @@ CREATE TABLE promotion(
 
 );
 
-insert into contact(phoneNumber, address, email) values ("912 821 438", "Rua de Baixo, 125", "contacto@digitalprime.com");
-insert into faq(question, answer) values ("Who are we?", "We are a store.");
-insert into faq(question, answer) values ("When do we deliver products?", "Every day.");
-insert into faq(question, answer) values ("How to Pay?", "Credit Card, MBWay, Paypal.");
+insert into contact(phoneNumber, address, email) values ('912 821 438', 'Rua de Baixo, 125', 'contacto@digitalprime.com');
+insert into faq(question, answer) values ('Who are we?', 'We are a store.');
+insert into faq(question, answer) values ('When do we deliver products?', 'Every day.');
+insert into faq(question, answer) values ('How to Pay?', 'Credit Card, MBWay, Paypal.');
 
 insert into address (city, postalcard, door, address) values ('Kōfu-shi', '955-624', '21', 'Fuller');
 

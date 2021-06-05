@@ -17,22 +17,28 @@
 
           <div class="col bg-light p-3 border">
             <h2>Contacts</h2>
-            <p>Phone number: xxx xxx xxx</p>
-            <p>Address: Rua Dr. Algo Nr. X</p>
-            <p>Email: digitalprime@gmail.com</p>
+            <?php
+            use App\Models\Contact;
+            $contact = Contact::first();?>
+            <p>Phone number: {{$contact->phoneNumber}}</p>
+            <p>Address: {{$contact->address}}</p>
+            <p>Email: {{$contact->email}}</p>
           </div>
           <h2> </h2>
           <div class="col bg-light p-3 border">
             <h2>FAQ's</h2>
             <h4> </h4>
-            <h5>Who are we?</h5>
-            <p>We are a store.</p>
-            <h4> </h4>
-            <h5>When do we deliver products?</h5>
-            <p>Every day.</p>
-            <h4> </h4>
-            <h5>How to Pay?</h5>
-            <p>Credit Card, MBWay, Paypal.</p>
+            <?php
+              use App\Models\Faq;
+              $faqs = Faq::all();
+              foreach($faqs as $f){
+              ?>
+                  <h5>{{$f->question}}</h5>
+                  <p>{{$f->answer}}</p>
+                  <h4> </h4>
+              <?php
+              }
+            ?>
           </div>
 
         </div>
