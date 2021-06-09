@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar sticky-top navbar-light bg-light">
       <div class="container-fluid">
         <img src="../assets/iconpc.png" alt="..." width = "50" height = "50" class="mx-2">
-        <a class="navbar-brand" href="../index.php">Digital Prime</a>
+        <a class="navbar-brand" href="{{ url('/') }}">Digital Prime</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>

@@ -16,36 +16,36 @@
       <div class="steps-row setup-panel">
         <div class="steps-step">
           <a type="button" class="btn btn-warning btn-circle">1</a>
-          <p>View Cart</p>
+          <h6>View Cart</h6>
         </div>
         <div class="steps-step">
           <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">2</a>
-          <p>Checkout</p>
+          <h6>Checkout</h6>
         </div>
         <div class="steps-step">
           <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">3</a>
-          <p>Pay</p>
+          <h6>Pay</h6>
         </div>
         <div class="steps-step">
           <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">4</a>
-          <p>In Delivery</p>
+          <h6>In Delivery</h6>
         </div>
         <div class="steps-step">
           <a type="button" class="btn btn-secondary btn-circle" disabled="disabled">5</a>
-          <p>Review</p>
-          </div>
+          <h6>Review</h6>
         </div>
+      </div>
     </div>
 
 
-    <h2>My Cart</h2>
+    <h2 class="mx-5">My Cart</h2>
     <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
+        <div class="col px-5">
         @if (!empty($cart))
           @each('partials.cart_product',$cart,'product' )
         @endif
         </div>
-        <div class="col">
+        <div class="col px-5">
             <h2>Cart</h2>
             <table class="table">
               <thead>
@@ -87,12 +87,14 @@
                 <td> </td>
                 <td></td>
                 <td>{{$totalQuantity}} item(s)</td>
-                <td>€ {{$total}}</td>
+                <td><b>€ {{$total}}</b></td>
               </tr>
 
               </tbody>
             </table>
-            <a href="checkout" type="button" class="btn btn-primary">Checkout Cart</a>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <button onclick="location.href='{{ url('/checkout') }}'" class="btn btn-primary me-md-2 btn-lg mt-2" type="button">Next</button>
+            </div>
         </div>
     </div>
 

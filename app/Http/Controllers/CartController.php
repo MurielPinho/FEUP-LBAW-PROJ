@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\CartProduct;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use PhpParser\Node\Expr\Cast\String_;
@@ -68,6 +69,8 @@ class CartController extends Controller
 	public function list()
 	{
        $carts = CartProduct::all()->sortBy('buyer_id');
+       $addr = Address::where('id',Auth::user()->id)->get();
+       echo $addr;
        foreach ($carts as $cart){
             echo $cart->buyer_id;
             echo " : ";

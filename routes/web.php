@@ -25,6 +25,10 @@ Route::get('/viewcart', 'MainPageController@viewcart');
 Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
+Route::get('/checkout', 'MainPageController@checkout');
+Route::get('/delivery', 'MainPageController@delivery');
+Route::get('/payment', 'MainPageController@payment');
+Route::get('/review', 'MainPageController@review');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');

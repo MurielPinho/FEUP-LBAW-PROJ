@@ -12,7 +12,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url('/products') }}">Products</a>
+                <a class="nav-link" aria-current="page" href="{{ url('/products') }}">Products</a>
               </li>
             @if (Auth::user())
                 @if (Auth::user()->isadmin)
