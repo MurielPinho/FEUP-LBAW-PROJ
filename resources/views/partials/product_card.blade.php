@@ -7,7 +7,7 @@
         <div class="card-body">
           <h5 class="card-title">{{$product->name}}</h5>
           <h6 class="card-title">{{$product->category->name}}</h6>
-          <h6 class="card-text">{{$product->price}}$</h6>
+          <h6 class="card-text">€ {{$product->price}}</h6>
           <p class="card-text">
             <div class="d-grid gap-2 col-6 mx-auto">
               @if (Auth::user())
@@ -19,5 +19,11 @@
       </div>
     </div>
   </div>
-
-
+<script defer type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
+<script>
+  function handler(){
+  }
+  function addCart(product_id,buyer_id){
+    sendAjaxRequest('post', '/addcart' , {product_id,buyer_id}, handler )
+  }
+</script>

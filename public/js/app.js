@@ -1,8 +1,5 @@
 function addEventListeners() {
-    console.log("event listeners")
-    document.getElementById('testedeclick').addEventListener('click', () =>{
-            console.log("clicou de fora");
-    })
+    
 
 }
 

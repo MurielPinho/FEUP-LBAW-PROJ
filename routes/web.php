@@ -52,10 +52,11 @@ Route::patch('products/{id}/', 'ProductController@update');
 Route::post('uploadproduct', 'ProductController@upload')->name('uploadproduct');
 
 //Cart
-Route::get('cartes', 'CartController@list');
+Route::get('carts', 'CartController@list');
 Route::post('addcart', 'CartController@add');
 Route::post('decrease', 'CartController@decrease');
 Route::post('increase', 'CartController@increase');
+Route::post('update', 'CartController@update');
 Route::get('cart', 'CartController@show');
 
 

@@ -12,7 +12,7 @@ class MainPageController extends Controller
 {
 
     public function home() {
-        $p = Product::all();
+        $p = Product::orderBy('id')->get();
         return view('index' , ['products' => $p]);
     }
 

@@ -20,12 +20,9 @@ class CartController extends Controller
 
     public function increase (Request $request){
 
-       $buyer_id = $request->input('buyer_id');
-       $product_id = $request->input('product_id');
-        $cart = CartProduct::where('buyer_id',$buyer_id)->where('product_id',$product_id)->get();
-        echo($buyer_id);
-        echo($product_id);
-        echo($cart);
+        $buyer_id = $request->input('buyer_id');
+        $product_id = $request->input('product_id');
+        $cart = CartProduct::where('buyer_id',Auth::user()->id)->where('product_id', '=', $product_id)->get();
         if(sizeof($cart) == 0) echo("vazio");
         $cart[0]->update(['quantity'=> $cart[0]->quantity +1 ]);
     }
@@ -33,22 +30,27 @@ class CartController extends Controller
     public function decrease (Request $request){
         $buyer_id = $request->input('buyer_id');
         $product_id = $request->input('product_id');
-        $cart = CartProduct::where('buyer_id',$buyer_id)->where('product_id',$product_id)->get();
+        $cart = CartProduct::where('buyer_id',Auth::user()->id)->where('product_id',$product_id)->get();
         if($cart[0]->quantity == 1){
             $cart[0]->delete();
         }else {
             $cart[0]->update(['quantity'=> $cart[0]->quantity -1 ]);
         }
+    }
 
-
-
+     public function update (Request $request){
+        $buyer_id = $request->input('buyer_id');
+        $product_id = $request->input('product_id');
+        $quantity = $request->input('quantity');
+        $cart = CartProduct::where('buyer_id',Auth::user()->id)->where('product_id',$product_id)->get();
+        $cart[0]->update(['quantity'=> $quantity]);
     }
 
     public function add(Request $request)
     {
        $buyer_id = $request->input('buyer_id');
        $product_id = $request->input('product_id');
-       $cart = CartProduct::where('buyer_id',$buyer_id)->where('product_id',$product_id)->get();
+       $cart = CartProduct::where('buyer_id',Auth::user()->id)->where('product_id',$product_id)->get();
 
        if(sizeof($cart) == 0) {
            $newcart = new CartProduct();
@@ -57,7 +59,6 @@ class CartController extends Controller
            $newcart->quantity = 1;
            $newcart->save();
        }else {
-        echo($cart[0]->quantity);
         $cart[0]->update(['quantity'=> $cart[0]->quantity +1 ]);
        }
 
@@ -81,9 +82,7 @@ class CartController extends Controller
 
        public function show(Request $request )
 	{
-        $carts = CartProduct::where('buyer_id',Auth::user()->id)->get();
-       // echo($carts);
-
+        $carts = CartProduct::where('buyer_id',Auth::user()->id)->orderBy('product_id')->get();
         return view('viewcart', ['cart' => $carts]); ;
 
 	}

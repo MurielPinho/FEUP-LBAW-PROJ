@@ -52,30 +52,41 @@
                 <tr>
                   <th scope="col"></th>
                   <th scope="col">Product</th>
+                  <th scope="col">Price per Unit</th>
+                  <th scope="col">Quantity</th>
                   <th scope="col">Price</th>
                 </tr>
               </thead>
               <tbody>
               <?php
               $total = 0;
+              $totalQuantity = 0;
               $i = 0;
               use App\Models\Product;
+              use App\Models\CartProduct;
               if(!empty($cart)){
                 foreach ($cart as $item) {
                   $prod = Product::find($item->product_id);
-                  $total = $total+$prod->price;
+                  $quantity = CartProduct::where('buyer_id',Auth::user()->id)->where('product_id', '=', $item->product_id)->pluck('quantity')->first();
+                  $total = $total+($prod->price*$quantity);
+                  $totalQuantity = $totalQuantity+$quantity;
                   $i++;
+                  
               ?>
               <tr>
                 <th scope="row">{{$i}}</th>
                 <td>{{$prod->name}}</td>
-                <td>€ {{$prod->price}}</td>
+                <td>€ {{$prod->price}}</td>
+                <td>{{$quantity}}</td>
+                <td>€ {{$prod->price*$quantity}}</td>
               </tr><?php
               }}
               ?>
               <tr>
                 <th scope="row">Total</th>
                 <td> </td>
+                <td></td>
+                <td>{{$totalQuantity}} item(s)</td>
                 <td>€ {{$total}}</td>
               </tr>
 

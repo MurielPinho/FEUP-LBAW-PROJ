@@ -30,7 +30,7 @@
                 <a class="nav-link" href="{{ url('/logout') }}"> Logout </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('viewcart')}}">Shopping Cart</a>
+                <a class="nav-link" href="{{url('cart')}}">Shopping Cart</a>
               </li>
             @else
             <li class="nav-item">
