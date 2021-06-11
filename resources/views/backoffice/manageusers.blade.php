@@ -56,7 +56,6 @@
 
         <td><input type="checkbox" onclick="toggleadmin({{$b->id}})" <?php echo ($b->isadmin ? 'checked' : '') ?>/></td>
         <td>
-            <button onclick="location.href='../loginreg-edit.html'" class="btn btn-primary me-md-2" type="button">Edit</button>
             <button onclick="deleteUser({{$b->id}})" class="btn btn-danger me-md-2" type="button">Delete</button>
          </td>
     </tr>

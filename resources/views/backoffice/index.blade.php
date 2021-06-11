@@ -55,7 +55,7 @@
               <img src="../assets/iconaddproduct.png" class="img-fluid rounded mx-auto d-block text-center" alt="..." width="200" height="300">
               <div class="card-body">
                 <h5>
-                  <a class="nav-link" href="/backoffice/newproduct">New Product</a>
+                  <a class="nav-link" href="/newproduct">New Product</a>
                 </h5>
               </div>
             </div>

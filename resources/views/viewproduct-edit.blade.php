@@ -95,7 +95,7 @@
        let category = document.querySelector('select').selectedIndex + 1;
        let image = document.querySelector('select').selectedIndex + 1;
        console.log( document.querySelector('input[type=file]'))
-       sendAjaxRequest('put', '/product/'+id , {description, name, price,category}, handler )
+       sendAjaxRequest('put', '/products/'+id , {description, name, price,category}, handler )
     }
 
     var loadFile = function(event) {

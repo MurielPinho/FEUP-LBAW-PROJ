@@ -48,8 +48,9 @@ Route::get('products/{id}', 'ProductController@show');
 Route::get('product-edit/{id}', 'ProductController@editPage');
 Route::put('product-edit/{id}', 'ProductController@edit');
 Route::delete('products/{id}', 'ProductController@destroy');
-Route::patch('products/{id}/', 'ProductController@update');
+Route::put('products/{id}/', 'ProductController@update');
 Route::post('uploadproduct', 'ProductController@upload')->name('uploadproduct');
+Route::get('newproduct', 'ProductController@create')->name('newproduct');
 
 //Cart
 Route::get('cartes', 'CartController@list');

@@ -29,20 +29,27 @@ class ProductController extends Controller
 	}
 
 
-    public function check_login (Request $request){
-
-    }
 
 
 	public function create(Request $request)
 	{
+        $product = new Product();
+        $product->name =  "New Product";
+        $product->category_id = 1;
+        $product->price = 50;
+        $product->description = "New Description";
+        $product->quantity = 1;
+        $product->save();
+
+        return view('viewproduct', ['product' => $product]);
+
+
 
 	}
 
 
 	public function update(Request $r, String $id)
 	{
-    	echo('ola');
         echo($id);
 
 

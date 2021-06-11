@@ -20,7 +20,7 @@
             <?php
             use App\Models\Contact;
             $contact = Contact::first();?>
-            <p>Phone number: {{$contact->phoneNumber}}</p>
+            <p>Phone number: (+351) 126 556</p>
             <p>Address: {{$contact->address}}</p>
             <p>Email: {{$contact->email}}</p>
           </div>
