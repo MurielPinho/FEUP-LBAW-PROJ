@@ -12,7 +12,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ url('/products') }}">Products</a>
+                <a class="nav-link" aria-current="page" href="{{ url('/products') }}">Products</a>
               </li>
             @if (Auth::user())
                 @if (Auth::user()->isadmin)
@@ -30,7 +30,7 @@
                 <a class="nav-link" href="{{ url('/logout') }}"> Logout </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('viewcart')}}">Shopping Cart</a>
+                <a class="nav-link" href="{{url('cart')}}">Shopping Cart</a>
               </li>
             @else
             <li class="nav-item">

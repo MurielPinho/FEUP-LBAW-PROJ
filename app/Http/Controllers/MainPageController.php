@@ -12,7 +12,7 @@ class MainPageController extends Controller
 {
 
     public function home() {
-        $p = Product::all();
+        $p = Product::orderBy('id')->get();
         return view('index' , ['products' => $p]);
     }
 
@@ -21,8 +21,25 @@ class MainPageController extends Controller
     }
 
     public function viewcart() {
-        $cart = CartProduct::where('buyer_id',2)->get();
+        $cart = CartProduct::where('buyer_id',Auth::user()->id)->get();
         return view('viewcart', ['cart' => $cart]);
+    }
+
+     public function checkout() {
+        $cart = CartProduct::where('buyer_id',Auth::user()->id)->get();
+        return view('checkout', ['cart' => $cart]);
+    }
+
+    public function delivery() {
+        return view('delivery');
+    }
+
+    public function payment() {
+        return view('payment');
+    }
+
+    public function review() {
+        return view('review');
     }
 
     public function productsearch() {

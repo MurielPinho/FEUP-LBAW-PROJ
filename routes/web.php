@@ -25,6 +25,10 @@ Route::get('/viewcart', 'MainPageController@viewcart');
 Route::get('/productsearch', 'MainPageController@productsearch');
 Route::get('/contactsfaqs', 'MainPageController@contactsfaqs');
 Route::get('/viewproduct', 'MainPageController@viewproduct');
+Route::get('/checkout', 'MainPageController@checkout');
+Route::get('/delivery', 'MainPageController@delivery');
+Route::get('/payment', 'MainPageController@payment');
+Route::get('/review', 'MainPageController@review');
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('loginreg-edit/{id}', 'BuyerController@loginregedit');
@@ -53,10 +57,11 @@ Route::post('uploadproduct', 'ProductController@upload')->name('uploadproduct');
 Route::get('newproduct', 'ProductController@create')->name('newproduct');
 
 //Cart
-Route::get('cartes', 'CartController@list');
+Route::get('carts', 'CartController@list');
 Route::post('addcart', 'CartController@add');
 Route::post('decrease', 'CartController@decrease');
 Route::post('increase', 'CartController@increase');
+Route::post('update', 'CartController@update');
 Route::get('cart', 'CartController@show');
 
 
