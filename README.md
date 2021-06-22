@@ -15,4 +15,5 @@ This project’s goal was to develop an online shop for tech products using Fram
 	* [A8: Vertical prototype](https://github.com/MurielPinho/FEUP-LBAW-PROJ/wiki/3-EAP#a8-vertical-prototype)
 * [PA: Product and Presentation](https://github.com/MurielPinho/FEUP-LBAW-PROJ/wiki/4-PA)
 	* [A9: Product](https://github.com/MurielPinho/FEUP-LBAW-PROJ/wiki/4-PA#a9-product)
+	* [A10: Video Demo](https://github.com/MurielPinho/FEUP-LBAW-PROJ/wiki/4-PA#a10-presentation)
  
